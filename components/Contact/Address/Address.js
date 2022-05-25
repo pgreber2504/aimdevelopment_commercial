@@ -1,20 +1,21 @@
 import React from 'react'
+import classes from './Address.module.scss';
 
-const Address = () => {
+const Address = (props) => {
     return (
-        <address className="contact-localization">
-            <div className="address--line"><strong>Adres:</strong> Łódź, ul.Sportowa 2</div>
-            <div className="address--line"><strong>Telefon:</strong> 513-513-513</div>
-            <div className="address--line"><strong>E-Mail:</strong> dsdasd@dadas.com</div>
-            <div className="address--icons">
+        <address className={classes.address}>
+            <div className={classes["address--line"]}><strong>Adres: </strong>{props.address}</div>
+            <div className={classes["address--line"]}><strong>Telefon: </strong>{props.phone}</div>
+            <div className={classes["address--line"]}><strong>E-Mail: </strong>{props.email}</div>
+            <div className={classes["address--icons"]}>
                 <a href="#">
                     <svg>
-                        <use xlinkHref="img/icons.svg#icon-facebook"></use>
+                        <use xlinkHref="images/icons.svg#icon-facebook"></use>
                     </svg>
                 </a>
                 <a href="#">
                     <svg>
-                        <use xlinkHref="img/icons.svg#icon-instagram"></use>
+                        <use xlinkHref="images/icons.svg#icon-instagram"></use>
                     </svg>
                 </a>
             </div>
