@@ -1,0 +1,16 @@
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+
+  li {
+    margin-right: 4rem;
+
+    a {
+      font-size: 1.6rem;
+      color: #eee;
+      text-decoration: none;
+    }
+  }
+}
