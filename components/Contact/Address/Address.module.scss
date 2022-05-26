@@ -51,11 +51,13 @@
       width: 3rem;
       fill: #111;
       cursor: pointer;
-      transition: fill 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      transform-origin: left;
     }
 
     svg:hover {
       fill: $color-primary;
+      filter: drop-shadow(0rem 0rem 1rem $color-primary);
     }
   }
 }

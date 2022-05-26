@@ -1,16 +1,24 @@
 import React from 'react'
+import { useInView } from 'react-intersection-observer';
 import classes from './SectionWrapper.module.scss';
 
 const SectionWrapper = (props) => {
-    const sectionClasses = `${classes.section} ${props.sectionClass && classes[props.sectionClass]}`
-    const titleClasses = `${classes['section__title']} ${classes[props.titleClass]}`
+    const { ref, inView, entry } = useInView({
+        triggerOnce: true,
+        threshold: 0.2
+    })
+
+    const sectionClasses = `${classes.section} 
+        ${props.sectionClass ? classes[props.sectionClass] : ''} 
+        ${!inView && props.intersect ? classes['section--hidden'] : ''}`
+
+    const titleClasses = `${classes['section__title']} ${props.titleClass ? classes[props.titleClass] : ''}`
 
 
 
-    let content;
 
     if (props.id === 'section--info') {
-        content = (
+        return (
             <section className={classes["section--info"]} id="section--info">
                 <div className={classes["section__info--phone"]}>
                     <svg>
@@ -37,19 +45,21 @@ const SectionWrapper = (props) => {
                 </div>
             </section>
         )
-    } else {
-        content = (
-            <section className={sectionClasses} id={props.id}>
-                <div className={titleClasses}>
-                    <h2 >{props.title}</h2>
-                    <h3 >{props.description}</h3>
-                </div>
-                {props.children}
-            </section>
-        )
     }
 
-    return content
+    if (props.intersect) {
+
+    }
+
+    return (
+        <section ref={props.intersect && ref} className={sectionClasses} id={props.id}>
+            <div className={titleClasses}>
+                <h2 >{props.title}</h2>
+                <h3 >{props.description}</h3>
+            </div>
+            {props.children}
+        </section>
+    )
 }
 
 export default SectionWrapper

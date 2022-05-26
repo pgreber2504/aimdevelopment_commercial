@@ -1,0 +1,11 @@
+.operations {
+  max-width: 100rem;
+  margin: 12rem auto 0 auto;
+  background-color: #fff;
+}
+
+.operations__tab-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}

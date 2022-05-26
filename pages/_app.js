@@ -1,3 +1,4 @@
+
 import { ModalContextProvider } from '../contexts/modal-context'
 import '../styles/globals.scss'
 
@@ -7,6 +8,7 @@ function MyApp({ Component, pageProps }) {
     <ModalContextProvider>
       <Component {...pageProps} />
     </ModalContextProvider>
+
   )
 }
 

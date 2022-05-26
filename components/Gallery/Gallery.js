@@ -17,19 +17,15 @@ const GALLERY_DATA = [
 
 const Gallery = () => {
     const [counter, setCounter] = useState(0);
-
-
-
-
     const numOfPhotos = GALLERY_DATA.length
 
-    const slideLeftHandler = () => {
+    const slideLeftHandler = useCallback(() => {
         if (counter === 0) {
             setCounter(numOfPhotos - 1);
         } else {
             setCounter(prevState => --prevState)
         }
-    }
+    }, [counter, numOfPhotos])
 
     const slideRightHandler = useCallback(() => {
         if (counter === numOfPhotos - 1) {
@@ -38,6 +34,10 @@ const Gallery = () => {
             setCounter(prevState => ++prevState)
         }
     }, [counter, numOfPhotos])
+
+    const dotClickHandler = useCallback((index) => {
+        setCounter(index)
+    }, [])
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -59,6 +59,7 @@ const Gallery = () => {
 
     const dots = GALLERY_DATA.map((_, index) => (
         <div
+            onClick={dotClickHandler.bind(null, index)}
             key={Math.random()}
             className={`${classes['dots__dot--img']} ${index === counter ? classes['active'] : ''} `}>
         </div>

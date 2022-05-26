@@ -1,6 +1,8 @@
-import Link from 'next/link'
+import { motion } from 'framer-motion'
 import React from 'react'
+import Link from 'react-scroll/modules/components/Link'
 import classes from './Hero.module.scss'
+
 
 
 
@@ -9,11 +11,11 @@ const Hero = () => {
         <div className={classes.hero}>
             <div className={classes["hero__info"]}>
                 <h1>
-                    Domki<span className={classes['animation--one']}>modułowe</span>oraz<br /><span className={classes['animation--two']}> mobilne </span>
+                    Domki <motion.span>modułowe</motion.span> oraz <br /><motion.span>mobilne</motion.span>
                 </h1>
                 <h4>Personalizacja każdego projektu domu modułowego</h4>
-                <Link href="#">
-                    Dowiedz się więcej
+                <Link to={'section--1'}>
+                    Dowiedz się więcej <span>&darr;</span>
                 </Link>
             </div>
         </div>

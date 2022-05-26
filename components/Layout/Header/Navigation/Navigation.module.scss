@@ -10,11 +10,6 @@
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.7);
 
-  .sticky {
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.95);
-  }
-
   .nav__logo {
     height: 4.5rem;
     transition: all 0.3s;
@@ -28,18 +23,23 @@
     li {
       margin-left: 4rem;
 
-      a:link,
-      a:visited {
-        font-size: 1.7rem;
-        font-weight: 400;
-        color: inherit;
-        text-decoration: none;
-        display: block;
-        transition: all 0.3s;
-      }
+      .nav__link {
+        &,
+        &:link,
+        &:visited {
+          font-size: 1.7rem;
+          font-weight: 400;
+          color: inherit;
+          text-decoration: none;
+          display: block;
+          transition: all 0.3s;
+          cursor: pointer;
+        }
 
-      a:hover {
-        color: $color-primary;
+        &:hover,
+        &.active {
+          color: $color-primary;
+        }
       }
 
       button {
@@ -49,3 +49,27 @@
     }
   }
 }
+
+.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+  animation: slideIn 0.5s ease-in forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+// @keyframes delay {
+//   from {
+//   }
+//   to {
+//     transform: translateY(0);
+//     position: relative;
+//   }
+// }

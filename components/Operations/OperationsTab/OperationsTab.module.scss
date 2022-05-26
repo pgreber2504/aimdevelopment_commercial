@@ -1,0 +1,29 @@
+@import "../../../styles/shared";
+.operations__tab {
+  transform: translateY(-70%);
+  background-color: white;
+  color: inherit;
+  border-radius: 0%;
+
+  span {
+    margin-right: 1rem;
+    font-size: 1.2em;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+  }
+}
+
+.active {
+  transform: translateY(-100%);
+  background-color: $color-primary;
+  border-bottom: none;
+
+  &:hover {
+    background: $color-primary;
+    filter: none;
+  }
+}

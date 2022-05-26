@@ -1,28 +1,44 @@
 import React, { useContext } from 'react'
-import Link from 'next/link'
 import classes from './Navigation.module.scss';
 import Button from '../../../UI/Button/Button';
 import ModalContext from '../../../../contexts/modal-context';
+import { Link } from 'react-scroll'
+
+
+
 
 
 const NAV__LINKS__DATA = [
-    { url: "#section--1", text: 'O nas' },
-    { url: "#section--2", text: 'Galeria' },
-    { url: "#section--3", text: 'Proces wykonania' },
-    { url: "#section--4", text: 'Domy mobilne' },
-    { url: "#section--5", text: 'Katalog' },
-    { url: "#section--6", text: 'Kontakt' },
+    { url: "section--1", text: 'O nas' },
+    { url: "section--2", text: 'Galeria' },
+    { url: "section--3", text: 'Proces wykonania' },
+    { url: "section--4", text: 'Domy mobilne' },
+    { url: "section--5", text: 'Katalog' },
+    { url: "section--6", text: 'Kontakt' },
 ]
 
 
-const Navigation = () => {
+const Navigation = (props) => {
     const modalCtx = useContext(ModalContext);
+
+
+    const navClasses = `${classes.nav} ${!props.inView ? classes.sticky : ''}`
 
     const navLinks = NAV__LINKS__DATA.map(link => {
         return (
             <li key={link.url} className={classes['nav__item']}>
-                <Link href={link.url}>{link.text}</Link>
-            </li>
+                <Link
+                    key={link.url}
+                    activeClass={classes.active}
+                    className={classes['nav__link']}
+                    to={link.url}
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}>
+                    {link.text}
+                </Link>
+            </li >
         )
     })
 
@@ -31,7 +47,7 @@ const Navigation = () => {
     }
 
     return (
-        <nav className={classes.nav}>
+        <nav className={navClasses}>
             <img />
             <ul className={classes.nav__links}>
                 {navLinks}

@@ -2,15 +2,12 @@
 
 .hero {
   flex: 1;
-
   max-width: 115rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  /* row-gap: 3rem; */
   align-content: center;
   justify-content: center;
-
   align-items: stretch;
   justify-items: start;
 

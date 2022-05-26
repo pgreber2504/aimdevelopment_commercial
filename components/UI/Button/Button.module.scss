@@ -2,7 +2,8 @@
 
 .button {
   display: inline-block;
-  background-color: $color-primary;
+  background-color: $color-primary-darker;
+
   color: #fff;
   font-size: 1.6rem;
   font-family: inherit;
@@ -11,9 +12,10 @@
   padding: 1.25rem 4.5rem;
   border-radius: 10rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.5s;
 
   &:hover {
-    background-color: $color-primary-darker;
+    background-color: $color-primary;
+    filter: drop-shadow(0rem 0rem 0.5rem $color-primary-darker);
   }
 }

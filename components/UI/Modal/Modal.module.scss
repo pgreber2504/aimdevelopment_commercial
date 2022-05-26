@@ -8,7 +8,7 @@
   padding: 5rem 6rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  transition: all 0.5s;
+  // transition: all 0.5s;
 
   .modal__header {
     font-size: 3.25rem;
@@ -33,6 +33,10 @@
       padding: 1rem 1.5rem;
       border: 1px solid #ddd;
       border-radius: 0.5rem;
+    }
+
+    .invalid {
+      background-color: tomato;
     }
 
     button {
@@ -64,7 +68,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   z-index: 100;
-  transition: all 0.5s;
+  // transition: all 0.5s;
 }
 
 .hidden {
