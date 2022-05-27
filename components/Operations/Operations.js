@@ -70,4 +70,4 @@ const Operations = () => {
     )
 }
 
-export default Operations
+export default React.memo(Operations)

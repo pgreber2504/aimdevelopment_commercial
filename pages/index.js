@@ -1,15 +1,32 @@
 import { AnimatePresence } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import React, { useContext } from 'react'
+import { Suspense } from 'react'
 
-import About from '../components/About/About'
-import ContactContainer from '../components/Contact/ContactContainer'
-import Gallery from '../components/Gallery/Gallery'
+// import About from '../components/About/About'
+// import ContactContainer from '../components/Contact/ContactContainer'
+// import Gallery from '../components/Gallery/Gallery'
 import Layout from '../components/Layout/Layout'
 import SectionWrapper from '../components/Layout/SectionWrapper/SectionWrapper'
-import Operations from '../components/Operations/Operations'
+// import Operations from '../components/Operations/Operations'
 import Button from '../components/UI/Button/Button'
 import Modal from '../components/UI/Modal/Modal'
 import ModalContext from '../contexts/modal-context'
+
+
+const About = dynamic(() => import('../components/About/About'), {
+    ssr: false,
+})
+
+const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
+    ssr: false,
+})
+const Operations = dynamic(() => import('../components/Operations/Operations'), {
+    ssr: false,
+})
+const ContactContainer = dynamic(() => import('../components/Contact/ContactContainer'), {
+    ssr: false,
+})
 
 const Landing = () => {
     const modalCtx = useContext(ModalContext);
@@ -27,7 +44,6 @@ const Landing = () => {
                 onExitComplete={() => null}
             >
                 {modalCtx.isShow && <Modal />}
-
             </AnimatePresence>
             <SectionWrapper
                 id={'section--info'}
@@ -40,7 +56,7 @@ const Landing = () => {
                 title={'O nas'}
                 description={'Kluczowe informacje o naszej firmie.'}
                 intersect={true}>
-                <About />
+                <About id={'section--1'} />
             </SectionWrapper>
             <SectionWrapper
                 id={'section--2'}

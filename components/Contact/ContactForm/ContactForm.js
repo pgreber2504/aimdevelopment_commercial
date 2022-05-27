@@ -44,13 +44,13 @@ const ContactForm = () => {
 
     return (
         <form className={classes["contact__form"]}>
-            <input required className={nameIsInvalid && classes.invalid} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" name="name" placeholder="Imię i Nazwisko" />
-            <input required className={phoneIsInvalid && classes.invalid} onChange={phoneChangeHandler} onBlur={phoneBlurHandler} type="number" name="number" placeholder="Numer telefonu" />
-            <input required className={emailIsInvalid && classes.invalid} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" name="email" placeholder="Adres e-mail" />
+            <input required className={nameIsInvalid ? classes.invalid : ''} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" name="name" placeholder="Imię i Nazwisko" />
+            <input required className={phoneIsInvalid ? classes.invalid : ''} onChange={phoneChangeHandler} onBlur={phoneBlurHandler} type="number" name="number" placeholder="Numer telefonu" />
+            <input required className={emailIsInvalid ? classes.invalid : ''} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" name="email" placeholder="Adres e-mail" />
 
             <textarea
                 required
-                className={messageIsInvalid && classes.invalid}
+                className={messageIsInvalid ? classes.invalid : ''}
                 onChange={messageChangeHandler}
                 onBlur={messageBlurHandler}
                 type="text"

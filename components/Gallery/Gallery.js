@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { wrap } from "popmotion";
 import classes from './Gallery.module.scss';
 import GalleryItem from './GalleryItem/GalleryItem';
+import Example from './GalleryItem/GalleryItem';
+import { AnimatePresence } from 'framer-motion';
 
 const GALLERY_DATA = [
     { imgSrc: "images/gallery/img-1.jpeg", alt: 'Photo 1' },
@@ -15,61 +18,44 @@ const GALLERY_DATA = [
     { imgSrc: "images/gallery/img-10.jpeg", alt: 'Photo 10' },
 ]
 
+
 const Gallery = () => {
-    const [counter, setCounter] = useState(0);
+    const [[page, direction], setPage] = useState([0, 0]);
     const numOfPhotos = GALLERY_DATA.length
 
-    const slideLeftHandler = useCallback(() => {
-        if (counter === 0) {
-            setCounter(numOfPhotos - 1);
-        } else {
-            setCounter(prevState => --prevState)
-        }
-    }, [counter, numOfPhotos])
+    const imageIndex = wrap(0, numOfPhotos, page);
 
-    const slideRightHandler = useCallback(() => {
-        if (counter === numOfPhotos - 1) {
-            setCounter(0)
-        } else {
-            setCounter(prevState => ++prevState)
-        }
-    }, [counter, numOfPhotos])
+    const paginate = useCallback((newDirection) => {
+        setPage([page + newDirection, newDirection]);
+    }, [setPage, page]);
 
-    const dotClickHandler = useCallback((index) => {
-        setCounter(index)
-    }, [])
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            slideRightHandler()
+            paginate(1)
         }, 7000)
 
         return () => {
             clearTimeout(timer)
         }
-    }, [counter, slideRightHandler])
+    }, [paginate])
 
-    const slides = GALLERY_DATA.map((el, index) => (
-        <GalleryItem
-            key={index}
-            className={index === counter && 'active-img'}
-            img={el.imgSrc}
-            alt={el.alt} />)
-    )
+
 
     const dots = GALLERY_DATA.map((_, index) => (
         <div
-            onClick={dotClickHandler.bind(null, index)}
             key={Math.random()}
-            className={`${classes['dots__dot--img']} ${index === counter ? classes['active'] : ''} `}>
+            className={`${classes['dots__dot--img']} ${index === imageIndex ? classes['active'] : ''} `}>
         </div>
     ))
 
     return (
         <div className={classes["slider__image"]}>
-            {slides}
-            <button onClick={slideLeftHandler} className={classes["slider__btn--left--img"]}>&larr;</button>
-            <button onClick={slideRightHandler} className={classes["slider__btn--right--img"]}>&rarr;</button>
+            <div className={classes['slide--img']}>
+                <Example paginate={paginate} direction={direction} page={page} src={GALLERY_DATA[imageIndex].imgSrc} />
+            </div>
+            <button onClick={() => paginate(-1)} className={classes["slider__btn--left--img"]}>&larr;</button>
+            <button onClick={() => paginate(1)} className={classes["slider__btn--right--img"]}>&rarr;</button>
             <div className={classes["dots__img"]}>
                 {dots}
             </div>

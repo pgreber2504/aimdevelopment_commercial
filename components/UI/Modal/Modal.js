@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import ModalContext from '../../../contexts/modal-context';
 import { motion } from 'framer-motion';
 

@@ -23,4 +23,4 @@ const Address = (props) => {
     )
 }
 
-export default Address
+export default React.memo(Address)

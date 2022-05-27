@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { motion } from 'framer-motion';
 import classes from './AboutItem.module.scss'
 import { useInView } from 'react-intersection-observer';
+import Image from '../../UI/Image/Image';
 
 
 
@@ -51,7 +52,7 @@ const AboutItem = (props) => {
         return (
             <motion.div
                 variants={dropInRight}
-                // initial='hidden'
+                // initial='hidden
                 animate={inView ? 'visible' : 'hidden'}
                 className={classes['about__container']}>
                 <div ref={ref} className={classes["about__feature"]}>
@@ -66,11 +67,12 @@ const AboutItem = (props) => {
                     </p>
                 </div>
                 <div className={classes["about__img--container"]}>
-                    <img
-                        src={props.img}
-                        data-src={props.dataImg}
-                        alt={props.alt}
-                    />
+                    {inView && (
+                        <Image
+                            src={props.img}
+                            alt={props.alt}
+                            isVisible
+                        />)}
                 </div>
             </motion.div>
         )
@@ -84,11 +86,12 @@ const AboutItem = (props) => {
             className={classes['about__container']}
             ref={ref}>
             <div className={classes["about__img--container"]}>
-                <img
-                    src={props.img}
-                    data-src={props.dataImg}
-                    alt={props.alt}
-                />
+                {inView && (
+                    <Image
+                        src={props.img}
+                        alt={props.alt}
+                        isVisible
+                    />)}
             </div>
             <div className={classes["about__feature"]}>
                 <div className={classes["about__icon"]}>

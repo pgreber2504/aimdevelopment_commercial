@@ -26,4 +26,4 @@ const FooterNav = () => {
     )
 }
 
-export default FooterNav
+export default React.memo(FooterNav)

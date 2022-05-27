@@ -20,4 +20,4 @@ const FooterLogo = () => {
     )
 }
 
-export default FooterLogo
+export default React.memo(FooterLogo)

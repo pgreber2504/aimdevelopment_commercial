@@ -16,4 +16,4 @@ const OperationsTab = (props) => {
     )
 }
 
-export default OperationsTab
+export default React.memo(OperationsTab)

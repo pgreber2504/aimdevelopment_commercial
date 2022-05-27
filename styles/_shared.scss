@@ -6,3 +6,24 @@ $color-primary-opacity: #5ec5763a;
 $color-tertiary-opacity: #ff58602d;
 $gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
 $gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+
+$media-min-mobile-width: 320px;
+$media-min-tablet-width: 576px;
+$media-min-desktop-width: 768px;
+$media-min-large-desktop-width: 1280px;
+
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media (min-width: 20em) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: 40em) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+}

@@ -27,4 +27,4 @@ const OperationsContent = (props) => {
     )
 }
 
-export default OperationsContent
+export default React.memo(OperationsContent)

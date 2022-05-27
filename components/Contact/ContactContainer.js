@@ -12,4 +12,4 @@ const ContactContainer = (props) => {
     )
 }
 
-export default ContactContainer
+export default React.memo(ContactContainer)
