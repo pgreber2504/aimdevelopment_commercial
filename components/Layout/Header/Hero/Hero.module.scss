@@ -21,7 +21,7 @@
     gap: 2rem;
 
     h1 {
-      font-size: 3.8rem;
+      font-size: $font-big-header;
       line-height: 1.6;
 
       span {
@@ -45,12 +45,12 @@
     }
 
     h4 {
-      font-size: 1.8rem;
+      font-size: $font-header;
       font-weight: 500;
     }
 
     a {
-      font-size: 1.7rem;
+      font-size: $font-content;
       font-weight: 500;
       color: #444;
       padding: 0 0 2px 0;
@@ -92,60 +92,5 @@
         transform: scale(1.5);
       }
     }
-  }
-}
-
-.animation--one {
-  transform: translate(-50%, -50%);
-  padding: 0 20px;
-  color: #ffffff;
-  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
-  background-position: 0;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine1 3s infinite linear;
-  animation-fill-mode: forwards;
-  -webkit-text-size-adjust: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.animation--two {
-  transform: translate(-50%, -50%);
-  padding: 0 20px;
-  color: #ffffff;
-  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
-  background-position: 0;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine2 3s infinite linear;
-  animation-fill-mode: forwards;
-  animation-delay: 1.5s;
-  -webkit-text-size-adjust: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-@keyframes shine1 {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 222px;
-  }
-  100% {
-    background-position: 222px;
-  }
-}
-
-@keyframes shine2 {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 185px;
-  }
-  100% {
-    background-position: 185px;
   }
 }

@@ -1,10 +1,20 @@
 @import "../../../styles/shared";
 
 .contact__form {
+  @include breakpoint(large) {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2rem 3rem;
+    align-items: center;
+    align-content: center;
+    flex-basis: 70%;
+  }
+
   display: grid;
-  grid-template-columns: 2fr 4fr;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 2rem 3rem;
+  // grid-template-columns: 2fr 4fr;
+  grid-template-rows: repeat(8, 1fr);
+  gap: 1rem;
   align-items: center;
   align-content: center;
   flex-basis: 70%;
@@ -14,8 +24,8 @@
   button {
     background-color: #222;
     border: 2px solid #111;
-    padding: 1rem;
-    font-size: 1.2rem;
+    padding: 0.8rem;
+    font-size: 1.1rem;
     transition: all 0.3s ease-in;
     outline: none;
     font-family: inherit;
@@ -31,8 +41,12 @@
   }
 
   textarea {
-    grid-row: 1 / span 4;
-    grid-column: 2;
+    @include breakpoint(large) {
+      grid-row: 1 / span 4;
+      grid-column: 2;
+      height: 100%;
+    }
+    grid-row: 1 / span 5;
     height: 100%;
   }
 
@@ -89,10 +103,5 @@
   button:hover {
     color: white;
     filter: drop-shadow(0rem 0rem 0.8rem $color-primary-darker);
-  }
-
-  label {
-    font-size: 1.7rem;
-    color: white;
   }
 }

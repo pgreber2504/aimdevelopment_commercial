@@ -1,0 +1,36 @@
+.sideDrawer__item {
+  margin-bottom: 1rem;
+  gap: 6px;
+  cursor: pointer;
+
+  &:nth-child(1) span {
+    border: 2px solid #39b385;
+  }
+  &:nth-child(2) span {
+    border: 2px solid #4fc17e;
+  }
+  &:nth-child(3) span {
+    border: 2px solid #5dc879;
+  }
+  &:nth-child(4) span {
+    border: 2px solid #6bcf73;
+  }
+  &:nth-child(5) span {
+    border: 2px solid #7ad56c;
+  }
+  &:nth-child(6) span {
+    border: 2px solid #8adb65;
+  }
+  &:nth-child(7) span {
+    border: 2px solid #9be15d;
+  }
+
+  .text-placeholder {
+    padding: 0.5rem;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 3rem;
+  }
+}
+
+// background: linear-gradient(90deg, , , , , , , , );

@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
-
+@import "./shared";
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+  @include fluid-typography(10, 14, 320, 1500);
+  // font-size: 62.5%;
   box-sizing: border-box;
 
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -18,7 +20,8 @@ body {
   font-weight: 300;
   color: #444;
   line-height: 1.9;
-  background-color: #f3f3f3;
+  background-color: $background;
+  overflow-x: hidden;
 }
 
 input:-webkit-autofill,

@@ -4,9 +4,10 @@ import classes from './Header.module.scss';
 
 import Hero from './Hero/Hero'
 import Navigation from './Navigation/Navigation'
+import SideDrawer from './SideDrawer/SideDrawer';
 
 const Header = () => {
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         threshold: 0
     });
 

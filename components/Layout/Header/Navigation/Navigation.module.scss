@@ -1,6 +1,9 @@
 @import "../../../../styles/shared";
 
 .nav {
+  @include breakpoint(large) {
+    display: flex;
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +19,10 @@
   }
 
   .nav__links {
-    display: flex;
+    @include breakpoint(large) {
+      display: flex;
+    }
+    display: none;
     align-items: center;
     list-style: none;
 
@@ -27,7 +33,7 @@
         &,
         &:link,
         &:visited {
-          font-size: 1.7rem;
+          // font-size: 1.7rem;
           font-weight: 400;
           color: inherit;
           text-decoration: none;

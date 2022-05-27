@@ -3,8 +3,26 @@ import classes from './ContactForm.module.scss'
 import Button from '../../UI/Button/Button'
 import useInput from '../../../hooks/use-input'
 import useValidation from '../../../hooks/use-validation'
+import { motion } from 'framer-motion'
 
-const ContactForm = () => {
+const dropInleft = {
+    hidden: {
+        x: "-50%",
+        opacity: 0,
+    },
+    visible: {
+        x: "0",
+        opacity: 1,
+        transition: {
+            duration: 10,
+            type: "spring",
+            damping: 16,
+            stiffness: 150,
+        },
+    },
+};
+
+const ContactForm = ({ inView }) => {
     const { emptyCheck, nameValidation, phoneNumberValidation, emailValidation } = useValidation()
     const {
         input: nameInput,
@@ -43,7 +61,10 @@ const ContactForm = () => {
     } = useInput(input => emptyCheck(input))
 
     return (
-        <form className={classes["contact__form"]}>
+        <motion.form
+            className={classes["contact__form"]}
+            variants={dropInleft}
+            animate={inView ? 'visible' : 'hidden'}>
             <input required className={nameIsInvalid ? classes.invalid : ''} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" name="name" placeholder="Imię i Nazwisko" />
             <input required className={phoneIsInvalid ? classes.invalid : ''} onChange={phoneChangeHandler} onBlur={phoneBlurHandler} type="number" name="number" placeholder="Numer telefonu" />
             <input required className={emailIsInvalid ? classes.invalid : ''} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" name="email" placeholder="Adres e-mail" />
@@ -58,7 +79,8 @@ const ContactForm = () => {
                 placeholder="Napisz wiadomość"
             ></textarea>
             <button>Wyślij</button>
-        </form>
+        </motion.form>
+
     )
 }
 

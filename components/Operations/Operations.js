@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react'
 import classes from './Operations.module.scss'
 import OperationsContent from './OperationsContent/OperationsContent'
@@ -49,23 +50,25 @@ const Operations = () => {
     )
 
 
-    const operations = OPERATIONS_DATA.map((el, index) => (
-        <OperationsContent
-            key={el.id}
-            title={el.title}
-            description={el.description}
-            className={operationNumber === index && 'active'}
-            iconId={el.iconId}
-        />
+    // const operations = OPERATIONS_DATA.map((el, index) => (
 
-    ))
+
+    // ))
 
     return (
         <div className={classes["operations"]}>
             <div className={classes["operations__tab-container"]}>
                 {operationTabs}
             </div>
-            {operations}
+            <AnimatePresence exitBeforeEnter>
+                <OperationsContent
+                    key={OPERATIONS_DATA[operationNumber].id}
+                    title={OPERATIONS_DATA[operationNumber].title}
+                    description={OPERATIONS_DATA[operationNumber].description}
+                    // className={operationNumber === index && 'active'}
+                    iconId={OPERATIONS_DATA[operationNumber].iconId}
+                />
+            </AnimatePresence>
         </div>
     )
 }

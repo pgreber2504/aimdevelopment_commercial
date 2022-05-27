@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import classes from './OperationsContent.module.scss';
 
@@ -9,8 +10,11 @@ const OperationsContent = (props) => {
     const iconLink = `images/icons.svg#${props.iconId}`
 
     return (
-        <div
+        <motion.div
             className={activeClasses}
+            initial={{ opacity: 0, zIndex: 1 }}
+            animate={{ opacity: 1, zIndex: 0 }}
+            exit={{ opacity: 0, zIndex: 1 }}
         >
             <div className={classes["operations__icon"]}>
                 <svg>
@@ -23,7 +27,7 @@ const OperationsContent = (props) => {
             <p>
                 {props.description}
             </p>
-        </div>
+        </motion.div>
     )
 }
 

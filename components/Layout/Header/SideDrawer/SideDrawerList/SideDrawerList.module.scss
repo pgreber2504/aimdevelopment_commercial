@@ -1,0 +1,11 @@
+.sideDrawer__list {
+  padding: 5px;
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  list-style: none;
+}
