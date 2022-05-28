@@ -11,7 +11,7 @@ const Hero = () => {
         <div className={classes.hero}>
             <div className={classes["hero__info"]}>
                 <h1>
-                    Domki <motion.span>modułowe</motion.span> oraz <br /><motion.span>mobilne</motion.span>
+                    Domki <motion.span>modułowe</motion.span> oraz <motion.span>mobilne</motion.span>
                 </h1>
                 <h4>Personalizacja każdego projektu domu modułowego</h4>
                 <Link to={'section--1'}>

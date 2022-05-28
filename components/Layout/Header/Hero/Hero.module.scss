@@ -3,22 +3,36 @@
 .hero {
   flex: 1;
   max-width: 115rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  align-content: center;
-  justify-content: center;
-  align-items: stretch;
-  justify-items: start;
+  height: 100%;
+
+  @include breakpoint(large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    justify-items: start;
+  }
 
   .hero__info {
-    padding: 5rem;
+    padding: 4rem;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    // gap: 3rem;
     align-items: flex-start;
-    gap: 2rem;
+    // gap: 2rem;
+    height: 100%;
+
+    @include breakpoint(large) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+    }
 
     h1 {
       font-size: $font-big-header;
@@ -45,12 +59,12 @@
     }
 
     h4 {
-      font-size: $font-header;
+      font-size: $font-big-desc;
       font-weight: 500;
     }
 
     a {
-      font-size: $font-content;
+      font-size: $font-header;
       font-weight: 500;
       color: #444;
       padding: 0 0 2px 0;
