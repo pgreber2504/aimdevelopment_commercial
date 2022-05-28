@@ -4,8 +4,12 @@
   list-style: none;
   display: flex;
   justify-content: space-evenly;
-  margin: 0 6rem;
+  margin: 0 2rem;
   margin-bottom: 5rem;
+
+  @include breakpoint(large) {
+    margin: 0 6rem;
+  }
 
   li {
     // margin-right: 4rem;
