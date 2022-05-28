@@ -1,14 +1,17 @@
+@import "../../../../styles/shared";
+
 .footer__nav {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: 0 6rem;
   margin-bottom: 5rem;
 
   li {
-    margin-right: 4rem;
+    // margin-right: 4rem;
 
     a {
-      font-size: 1.6rem;
+      font-size: $font-content;
       color: #eee;
       text-decoration: none;
     }
