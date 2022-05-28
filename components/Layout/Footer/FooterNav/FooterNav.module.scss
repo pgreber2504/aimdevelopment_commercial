@@ -11,13 +11,9 @@
     margin: 0 6rem;
   }
 
-  li {
-    // margin-right: 4rem;
-
-    a {
-      font-size: $font-content;
-      color: #eee;
-      text-decoration: none;
-    }
+  a {
+    font-size: $font-content;
+    color: #eee;
+    text-decoration: none;
   }
 }
