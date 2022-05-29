@@ -36,7 +36,7 @@ const GalleryMobile = (props) => {
                         <svg>
                             <use xlinkHref="images/icons.svg#icon-zoom-in"></use>
                         </svg>
-                        <span>Dotknij aby zobaczyc więcej</span>
+                        <span>Dotknij aby zobaczyć więcej</span>
                     </div>
                 </div>
             </div>

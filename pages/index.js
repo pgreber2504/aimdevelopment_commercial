@@ -73,7 +73,7 @@ const Landing = () => {
                 <Operations />
             </SectionWrapper>
             <SectionWrapper
-                id={'section--6'}
+                id={'section--5'}
                 sectionClass={'section--sign-up'}
                 title={'Kontakt'}
                 description={'Skontaktuj się z nami'}
@@ -81,7 +81,7 @@ const Landing = () => {
                 <ContactContainer phone={'509-513-513'} email={'test@test.com'} address={'Łódź, Sportowa 2'} />
             </SectionWrapper>
             <SectionWrapper
-                id={'section--5'}
+                id={'section--6'}
                 sectionClass={'section--sign-up'}
                 description={'Jeśli chcesz się dowiedziec czegoś więcej o nas, bądź o naszej ofercie'}
             >

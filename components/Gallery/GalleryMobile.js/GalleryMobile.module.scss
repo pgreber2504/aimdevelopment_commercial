@@ -10,8 +10,8 @@
 
   .clickInfo {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.498);
-    color: #fff;
+    background: $gradient-primary;
+    color: #444;
     width: 100%;
     height: 14%;
     z-index: 1;
@@ -24,7 +24,7 @@
     svg {
       width: $font-big-header;
       height: $font-big-header;
-      fill: $color-primary;
+      fill: #444;
     }
 
     span {
