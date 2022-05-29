@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, Fragment } from 'react'
 import { wrap } from "popmotion";
 import classes from './Gallery.module.scss';
 import GalleryItem from './GalleryItem/GalleryItem';
 import Example from './GalleryItem/GalleryItem';
 import { AnimatePresence } from 'framer-motion';
+import GalleryDesktop from './GalleryDesktop/GalleryDesktop';
+import GalleryMobile from './GalleryMobile.js/GalleryMobile';
 
 const GALLERY_DATA = [
     { imgSrc: "images/gallery/img-1.jpeg", alt: 'Photo 1' },
@@ -30,36 +32,38 @@ const Gallery = () => {
     }, [setPage, page]);
 
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            paginate(1)
-        }, 7000)
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         paginate(1)
+    //     }, 7000)
 
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [paginate])
-
-
-
-    const dots = GALLERY_DATA.map((_, index) => (
-        <div
-            key={Math.random()}
-            className={`${classes['dots__dot--img']} ${index === imageIndex ? classes['active'] : ''} `}>
-        </div>
-    ))
+    //     return () => {
+    //         clearTimeout(timer)
+    //     }
+    // }, [paginate])
 
     return (
-        <div className={classes["slider__image"]}>
-            <div className={classes['slide--img']}>
-                <Example paginate={paginate} direction={direction} page={page} src={GALLERY_DATA[imageIndex].imgSrc} />
-            </div>
-            <button onClick={() => paginate(-1)} className={classes["slider__btn--left--img"]}>&larr;</button>
-            <button onClick={() => paginate(1)} className={classes["slider__btn--right--img"]}>&rarr;</button>
-            <div className={classes["dots__img"]}>
-                {dots}
-            </div>
-        </div>
+        <Fragment>
+            <GalleryMobile
+                src={GALLERY_DATA[imageIndex].imgSrc}
+                paginate={paginate}
+                direction={direction}
+                page={page}
+                lBtnOnClick={() => paginate(-1)}
+                rBtnOnClick={() => paginate(1)}
+                data={GALLERY_DATA}
+                imageIndex={imageIndex}
+            />
+            <GalleryDesktop
+                src={GALLERY_DATA[imageIndex].imgSrc}
+                paginate={paginate}
+                direction={direction}
+                page={page}
+                lBtnOnClick={() => paginate(-1)}
+                rBtnOnClick={() => paginate(1)}
+                data={GALLERY_DATA}
+                imageIndex={imageIndex} />
+        </Fragment>
     )
 }
 

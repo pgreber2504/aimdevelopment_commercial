@@ -1,5 +1,7 @@
+@import "../../../../../styles/shared";
+
 .sideDrawer__item {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   gap: 6px;
   cursor: pointer;
 
@@ -26,11 +28,9 @@
   }
 
   .text-placeholder {
-    padding: 0.5rem;
+    padding: 0.6rem;
     height: 40px;
     border-radius: 10px;
-    font-size: 3rem;
+    font-size: $font-section-header;
   }
 }
-
-// background: linear-gradient(90deg, , , , , , , , );

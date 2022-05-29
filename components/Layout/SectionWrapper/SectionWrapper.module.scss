@@ -1,12 +1,12 @@
 @import "../../../styles/shared";
 
 .section {
-  padding: 10rem 3rem;
+  padding: 8rem 2rem;
   border-top: 1px solid #ddd;
   transition: transform 1.2s, opacity 1s;
 
   @include breakpoint(large) {
-    padding: 18rem 10rem;
+    padding: 8rem 5rem;
   }
 
   .section__title {
@@ -95,7 +95,6 @@
 
     svg {
       grid-row: 1 / span 2;
-      // height: 100%;
       width: 5rem;
       justify-self: flex-end;
       fill: #444;

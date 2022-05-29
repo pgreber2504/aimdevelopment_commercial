@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 
-// export default React.memo(GalleryItem)
-
 
 const variants = {
     enter: (direction) => {
@@ -25,12 +23,7 @@ const variants = {
     }
 };
 
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity;
-};
-
-const Example = (props) => {
+const GalleryItem = (props) => {
 
     return (
         <>
@@ -47,22 +40,10 @@ const Example = (props) => {
                         x: { type: "spring", stiffness: 300, damping: 30 },
                         opacity: { duration: 0.2 }
                     }}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={1}
-                    onDragEnd={(e, { offset, velocity }) => {
-                        const swipe = swipePower(offset.x, velocity.x);
-
-                        if (swipe < -swipeConfidenceThreshold) {
-                            props.paginate(1);
-                        } else if (swipe > swipeConfidenceThreshold) {
-                            props.paginate(-1);
-                        }
-                    }}
                 />
             </AnimatePresence>
         </>
     );
 };
 
-export default Example
+export default GalleryItem

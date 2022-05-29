@@ -6,6 +6,10 @@
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
-  text-align: center;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
 }
