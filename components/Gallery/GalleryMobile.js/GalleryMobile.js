@@ -20,7 +20,7 @@ const GalleryMobile = (props) => {
                 <div className={classes["slider__image--mobile-fullscreen"]}>
                     <button onClick={closeFullscreenHandler} className={classes["slider__btn--close-fullscreen"]}>&times;</button>
                     <div className={classes['slide--img--mobile-fullscreen']}>
-                        <GalleryItem paginate={props.paginate} direction={props.direction} page={props.page} src={props.src} />
+                        <GalleryItem fullscreen={fullscreen} paginate={props.paginate} direction={props.direction} page={props.page} src={props.src} />
                     </div>
                     <button onClick={props.lBtnOnClick} className={classes["slider__btn--left--img--mobile-fullscreen"]}>&larr;</button>
                     <button onClick={props.rBtnOnClick} className={classes["slider__btn--right--img--mobile-fullscreen"]}>&rarr;</button>
