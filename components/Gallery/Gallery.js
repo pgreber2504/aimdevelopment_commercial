@@ -45,6 +45,7 @@ const Gallery = () => {
     return (
         <Fragment>
             <GalleryMobile
+                srcPlaceholder={GALLERY_DATA[0].imgSrc}
                 src={GALLERY_DATA[imageIndex].imgSrc}
                 paginate={paginate}
                 direction={direction}

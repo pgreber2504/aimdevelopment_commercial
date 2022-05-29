@@ -31,13 +31,14 @@ const GalleryMobile = (props) => {
 
             <div className={classes["slider__image--mobile"]}>
                 <div onClick={openFullscreenHandler} className={classes['slide--img--mobile']}>
-                    <GalleryItem paginate={props.paginate} direction={props.direction} page={props.page} src={props.src} />
+                    <GalleryItem paginate={props.paginate} direction={props.direction} page={props.page} src={props.srcPlaceholder} />
+                    <div className={classes.clickInfo}>
+                        <svg>
+                            <use xlinkHref="images/icons.svg#icon-zoom-in"></use>
+                        </svg>
+                        <span>Dotknij aby zobaczyc więcej</span>
+                    </div>
                 </div>
-                {/* <button onClick={props.lBtnOnClick} className={classes["slider__btn--left--img--mobile"]}>&larr;</button>
-                <button onClick={props.rBtnOnClick} className={classes["slider__btn--right--img--mobile"]}>&rarr;</button>
-                <div className={classes["dots__img"]}>
-                    <Dots data={props.data} imageIndex={props.imageIndex} />
-                </div> */}
             </div>
         </Fragment>
     )

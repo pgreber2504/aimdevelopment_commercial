@@ -39,7 +39,6 @@ const fullscreenVariants = {
 };
 
 const GalleryItem = (props) => {
-    console.log(props.fullscreen);
     return (
         <>
             <AnimatePresence initial={false} custom={props.direction} exitBeforeEnter={props.fullscreen}>
@@ -52,8 +51,7 @@ const GalleryItem = (props) => {
                     animate="center"
                     exit="exit"
                     transition={{
-                        x: { type: "spring", stiffness: 300, damping: 30 },
-                        opacity: { duration: 0.2 }
+                        opacity: { duration: 0.4 }
                     }}
                 />
             </AnimatePresence>
