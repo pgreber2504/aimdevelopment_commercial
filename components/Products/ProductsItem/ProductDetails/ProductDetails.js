@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'react-scroll/modules/components/Link'
 import Button from '../../../UI/Button/Button'
 import classes from './ProductDetails.module.scss'
 
@@ -9,7 +10,9 @@ const ProductDetails = ({ yardage, title, description, price }) => {
             <h4>{title}</h4>
             <p>{description}</p>
             <p className={classes['product--details-price']}>Cena od: {price} zł</p>
-            <Button>Zapytaj o więcej</Button>
+            <Link to={'section--5'} smooth={true}>
+                <Button>Zapytaj o więcej</Button>
+            </Link>
         </div>
     )
 }

@@ -6,14 +6,14 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1rem;
-  flex-basis: 25%;
+  flex-basis: 30%;
 
   .address--line {
     border-bottom: 1px solid #111;
     width: 100%;
     text-align: left;
     font-style: normal;
-    font-size: $font-content;
+    font-size: $font-header;
     color: #666;
     transition: all 0.5s ease-in-out;
     transform-origin: left;

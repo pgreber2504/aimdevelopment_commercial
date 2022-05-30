@@ -8,7 +8,7 @@
     gap: 1rem 2rem;
     align-items: center;
     align-content: center;
-    flex-basis: 70%;
+    flex-basis: 65%;
   }
 
   display: grid;
@@ -81,15 +81,24 @@
   }
 
   button:disabled {
-    background-color: #666;
+    background: #666;
     color: #444;
     border: 1px solid #444;
     cursor: not-allowed;
 
+    &::after {
+      display: none;
+    }
+
     &:hover {
-      border: inherit;
+      background: #666;
+      filter: none;
       color: inherit;
-      background-color: inherit;
+      border: 1px solid #444;
+    }
+
+    &:hover::after {
+      display: none;
     }
   }
 

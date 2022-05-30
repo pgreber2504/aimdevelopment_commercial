@@ -22,7 +22,6 @@ const dropInleft = {
 };
 
 const ContactForm = ({ inView }) => {
-    const { formIsValid, setFormIsValid } = useState(true)
     const { emptyCheck, nameValidation, phoneNumberValidation, emailValidation } = useValidation()
     const {
         input: nameInput,
@@ -60,15 +59,12 @@ const ContactForm = ({ inView }) => {
         inputValueChange: messageChangeHandler,
     } = useInput(input => emptyCheck(input))
 
-    const formIsInvalid = () => {
-        return !nameIsValid || !phoneIsValid || !emailIsValid || !messageIsValid
-    }
+    const formIsValid = nameIsValid && phoneIsValid && emailIsValid && messageIsValid
 
     const submitMailHandler = e => {
         e.preventDefault();
 
-        if (formIsInvalid()) {
-            setFormIsValid(false);
+        if (!formIsInvalid) {
             return
         }
     }
@@ -79,9 +75,9 @@ const ContactForm = ({ inView }) => {
             variants={dropInleft}
             animate={inView ? 'visible' : 'hidden'}
             onSubmit={submitMailHandler}>
-            <input required className={nameIsInvalid ? classes.invalid : ''} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" name="name" placeholder="Imię i Nazwisko" />
-            <input required className={phoneIsInvalid ? classes.invalid : ''} onChange={phoneChangeHandler} onBlur={phoneBlurHandler} type="number" name="number" placeholder="Numer telefonu" />
-            <input required className={emailIsInvalid ? classes.invalid : ''} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" name="email" placeholder="Adres e-mail" />
+            <input required className={nameIsInvalid ? classes.invalid : ''} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" name="name" placeholder="Imię i Nazwisko*" />
+            <input required className={phoneIsInvalid ? classes.invalid : ''} onChange={phoneChangeHandler} onBlur={phoneBlurHandler} type="number" name="number" placeholder="Numer telefonu*" />
+            <input required className={emailIsInvalid ? classes.invalid : ''} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" name="email" placeholder="Adres e-mail*" />
 
             <textarea
                 required
@@ -90,7 +86,7 @@ const ContactForm = ({ inView }) => {
                 onBlur={messageBlurHandler}
                 type="text"
                 name="name"
-                placeholder="Napisz wiadomość"
+                placeholder="Napisz wiadomość*"
             ></textarea>
             <button disabled={!formIsValid}>Wyślij</button>
         </motion.form>

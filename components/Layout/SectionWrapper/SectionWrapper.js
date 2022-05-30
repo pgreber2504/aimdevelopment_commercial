@@ -1,12 +1,31 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import { useInView } from 'react-intersection-observer';
 import classes from './SectionWrapper.module.scss';
 
 const SectionWrapper = (props) => {
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.2
     })
+
+    const { ref: contactRef, inView: contactInView } = useInView({
+        threshold: 0,
+        triggerOnce: true,
+    });
+
+    const contactVariants = {
+        initial: {
+            y: '80%'
+        },
+        animate: {
+            y: 0,
+            transition: {
+                duration: 0.4,
+                type: 'spring'
+            }
+        }
+    }
 
     const sectionClasses = `${classes.section} 
         ${props.sectionClass ? classes[props.sectionClass] : ''} 
@@ -20,29 +39,44 @@ const SectionWrapper = (props) => {
     if (props.id === 'section--info') {
         return (
             <section className={classes["section--info"]} id="section--info">
-                <div className={classes["section__info--phone"]}>
+                <motion.div
+                    ref={contactRef}
+                    className={classes["section__info--phone"]}
+                    variants={contactVariants}
+                    initial='initial'
+                    animate={contactInView ? 'animate' : 'initial'}>
                     <svg>
                         <use xlinkHref="images/icons.svg#icon-phone"></use>
                     </svg>
                     <h1>ZADZWOŃ DO NAS:</h1>
                     <h2>{props.phoneNumber}</h2>
-                </div>
+                </motion.div>
 
-                <div className={classes["section__info--phone"]}>
+                <motion.div
+                    ref={contactRef}
+                    className={classes["section__info--phone"]}
+                    variants={contactVariants}
+                    initial='initial'
+                    animate={contactInView ? 'animate' : 'initial'}>
                     <svg>
                         <use xlinkHref="images/icons.svg#icon-mail"></use>
                     </svg>
                     <h1>NAPISZ DO NAS:</h1>
                     <h2>{props.email}</h2>
-                </div>
+                </motion.div>
 
-                <div className={classes["section__info--phone"]}>
+                <motion.div
+                    ref={contactRef}
+                    className={classes["section__info--phone"]}
+                    variants={contactVariants}
+                    initial='initial'
+                    animate={contactInView ? 'animate' : 'initial'}>
                     <svg>
                         <use xlinkHref="images/icons.svg#icon-map-pin"></use>
                     </svg>
                     <h1>NASZA LOKALIZACJA</h1>
                     <h2>{props.address}</h2>
-                </div>
+                </motion.div>
             </section>
         )
     }
