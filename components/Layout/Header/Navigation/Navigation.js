@@ -50,7 +50,7 @@ const Navigation = (props) => {
                     to={link.url}
                     spy={true}
                     smooth={true}
-                    offset={0}
+                    offset={-100}
                     duration={500}>
                     {link.text}
                 </Link>
