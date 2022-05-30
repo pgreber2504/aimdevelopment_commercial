@@ -39,7 +39,7 @@
     <a href="https://github.com/pgreber2504/domy_mobilne_commercial"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/pgreber2504/domy_mobilne_commercial">View Demo</a>
+    <a href="https://domy-mobilne-commercial.vercel.app">View Demo</a>
     ·
     <a href="https://github.com/pgreber2504/domy_mobilne_commercial/issues">Report Bug</a>
     ·
