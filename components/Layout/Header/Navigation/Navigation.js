@@ -1,10 +1,15 @@
 import React, { useContext } from 'react'
 import classes from './Navigation.module.scss';
-import Button from '../../../UI/Button/Button';
+
 import ModalContext from '../../../../contexts/modal-context';
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion';
+
+import Button from '../../../UI/Button/Button';
 import SideDrawer from '../SideDrawer/SideDrawer';
+
+import { NAV__LINKS__DATA } from '../../../../constants/nav-data';
+
 const dropInTop = {
     hidden: {
         opacity: 1,
@@ -23,15 +28,6 @@ const dropInTop = {
 
 
 
-const NAV__LINKS__DATA = [
-    { url: "section--1", text: 'O nas' },
-    { url: "section--2", text: 'Galeria' },
-    { url: "section--3", text: 'Proces wykonania' },
-    { url: "section--4", text: 'Domy mobilne' },
-    { url: "section--5", text: 'Kontakt' },
-    { url: "section--6", text: 'Katalog' },
-
-]
 
 
 const Navigation = (props) => {

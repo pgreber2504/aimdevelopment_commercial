@@ -62,7 +62,6 @@ const GalleryItem = (props) => {
                         src={props.src}
                         alt={props.alt}
                         layout='fill'
-                        placeholder='blur'
                     />
                 </motion.div>
             </AnimatePresence>
