@@ -32,12 +32,19 @@
     input {
       font-size: $font-content;
       padding: 1rem 1.5rem;
-      border: 1px solid #ddd;
+      border: 2px solid #ddd;
       border-radius: 0.5rem;
+      transition: all 0.3s ease-out;
+
+      &:focus,
+      &:active {
+        border-color: $color-primary;
+        outline: none;
+      }
     }
 
     .invalid {
-      // TODO
+      border-color: $color-tertiary;
     }
 
     button {

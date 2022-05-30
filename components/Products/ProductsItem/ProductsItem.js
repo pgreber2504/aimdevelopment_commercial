@@ -5,7 +5,7 @@ import ProductDetails from './ProductDetails/ProductDetails'
 import ProductPhotos from './ProductPhotos/ProductPhotos'
 import classes from './ProductsItem.module.scss'
 
-const ProductsItem = ({ description, price, title, yardage, src, alt, reversed }) => {
+const ProductsItem = ({ description, price, name, yardage, src, alt, reversed }) => {
     const { ref, inView } = useInView({
         threshold: 0,
         rootMargin: '-20px',
@@ -39,7 +39,7 @@ const ProductsItem = ({ description, price, title, yardage, src, alt, reversed }
             animate={inView ? 'animate' : 'initial'}
             exit='exit'>
             <ProductPhotos src={src} alt={alt} />
-            <ProductDetails description={description} price={price} title={title} yardage={yardage} />
+            <ProductDetails description={description} price={price} name={name} yardage={yardage} />
         </motion.div>
     )
 }

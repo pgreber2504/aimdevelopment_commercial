@@ -23,5 +23,13 @@
   &:disabled {
     background-color: #aaa;
     border: none;
+    color: #fff;
+
+    &:hover {
+      background-color: #aaa;
+      filter: none;
+      color: #fff;
+      cursor: not-allowed;
+    }
   }
 }

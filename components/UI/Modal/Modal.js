@@ -75,6 +75,8 @@ const Modal = (props) => {
     } = useInput((input) => emailValidation(input));
 
 
+    const formIsValid = nameIsValid && lastNameIsValid && emailIsValid
+
 
     const closeModal = () => {
         modalCtx.closeModal()
@@ -100,10 +102,10 @@ const Modal = (props) => {
                         <label>Imię</label>
                         <input className={nameIsInvalid && classes.invalid} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" required min={1} max={20} />
                         <label>Nazwisko</label>
-                        <input className='' onChange={lastNameChangeHandler} onBlur={lastNameBlurHandler} type="text" required min={1} max={20} />
+                        <input className={lastNameIsInvalid && classes.invalid} onChange={lastNameChangeHandler} onBlur={lastNameBlurHandler} type="text" required min={1} max={20} />
                         <label>Adres E-Mail</label>
                         <input className={emailIsInvalid && classes.invalid} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" required />
-                        <Button>Pobierz katalog &rarr;</Button>
+                        <Button disabled={!formIsValid}>Pobierz katalog &rarr;</Button>
                     </form>
                 </motion.div>
             </Overlay>

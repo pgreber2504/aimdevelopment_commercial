@@ -24,6 +24,7 @@ const Button = (props) => {
         <button
             className={cssClasses}
             onClick={props.onClick}
+            disabled={props.disabled}
         >
             {props.children}
         </button>

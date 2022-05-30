@@ -10,7 +10,7 @@ const Products = () => {
         return <ProductsItem
             key={prod.id}
             description={prod.description}
-            title={prod.title}
+            name={prod.name}
             price={prod.minPrice}
             yardage={prod.yardage}
             src={prod.photos[0]}
