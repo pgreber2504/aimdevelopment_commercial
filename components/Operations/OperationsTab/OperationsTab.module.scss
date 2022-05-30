@@ -1,15 +1,13 @@
 @import "../../../styles/shared";
 .operations__tab {
-  transform: translateY(-70%);
   background-color: white;
   color: inherit;
   border-radius: 0%;
   font-size: $font-content;
-  width: 24%;
+  width: 60%;
 
   span {
     margin-right: 1rem;
-    // font-size: 1.2em;
     font-weight: 700;
     display: inline-block;
   }
@@ -17,15 +15,24 @@
   &:hover {
     background-color: $color-primary;
   }
+
+  @include breakpoint(large) {
+    transform: translateY(-70%);
+    height: 8rem;
+    width: 24%;
+  }
 }
 
 .active {
-  transform: translateY(-100%);
+  transform: scale(1.1);
   background-color: $color-primary;
-  border-bottom: none;
 
-  &:hover {
-    background: $color-primary;
-    filter: none;
+  @include breakpoint(large) {
+    transform: translateY(-100%) scale(1);
+
+    &:hover {
+      background: $color-primary;
+      filter: none;
+    }
   }
 }
