@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image';
 
 
 const variants = {
@@ -26,15 +27,18 @@ const variants = {
 const fullscreenVariants = {
     enter: {
         zIndex: 0,
-        opacity: 0
+        opacity: 0,
+        position: 'relative',
     },
     center: {
         zIndex: 1,
-        opacity: 1
+        opacity: 1,
+        position: 'relative',
     },
     exit: {
         zIndex: 0,
-        opacity: 0
+        opacity: 0,
+        position: 'relative',
     }
 };
 
@@ -42,9 +46,9 @@ const GalleryItem = (props) => {
     return (
         <>
             <AnimatePresence initial={false} custom={props.direction} exitBeforeEnter={props.fullscreen}>
-                <motion.img
+                <motion.div
                     key={props.page}
-                    src={props.src}
+
                     custom={props.direction}
                     variants={props.fullscreen ? fullscreenVariants : variants}
                     initial="enter"
@@ -53,7 +57,14 @@ const GalleryItem = (props) => {
                     transition={{
                         opacity: { duration: 0.4 }
                     }}
-                />
+                >
+                    <Image
+                        src={props.src}
+                        alt={props.alt}
+                        layout='fill'
+                        placeholder='blur'
+                    />
+                </motion.div>
             </AnimatePresence>
         </>
     );

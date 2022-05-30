@@ -1,11 +1,15 @@
 import React from 'react'
 import classes from './About.module.scss';
-import AboutItem from './AboutItem/AboutItem'
+import AboutItem from './AboutItem/AboutItem';
+
+import House from '../../public/images/house.webp';
+import Luxury from '../../public/images/luxury.webp';
+import Truck from '../../public/images/truck.webp';
 
 const ABOUT_ITEM_DATA = [
     {
-        img: "images/house.jpeg",
-        dataImg: "images/house.jpeg",
+        img: House,
+        dataImg: '/house.webp',
         alt: "Przyszłościowe domy modułowe",
         title: 'Domy przyszłościowe',
         description: `Dom modułowy to miejsce, w którym można zatrzymać się, odpocząć i
@@ -15,8 +19,8 @@ const ABOUT_ITEM_DATA = [
         reversed: false,
     },
     {
-        img: "images/luxury.jpeg",
-        dataImg: "images/luxury.jpeg",
+        img: Luxury,
+        dataImg: "/luxury.jpeg",
         alt: "Luksusowe i tanie domy",
         title: 'Niski koszt inwestycji',
         description: `Domy modułowe to idealny przykład obiektów, które nie wymagają
@@ -26,8 +30,8 @@ const ABOUT_ITEM_DATA = [
         reversed: true,
     },
     {
-        img: "images/truck.jpeg",
-        dataImg: "images/truck.jpeg",
+        img: Truck,
+        dataImg: "/truck.jpeg",
         alt: "Szybka budowa domu",
         title: 'Najszybszy czas realizacji',
         description: `Dom modułowy to budowla, w której większość komponentów powstaje w
@@ -44,7 +48,7 @@ const About = () => {
 
     const aboutItems = ABOUT_ITEM_DATA.map(item => (
         <AboutItem
-            key={item.img}
+            key={item.dataImg}
             reversed={item.reversed}
             img={item.img}
             dataImg={item.dataImg}

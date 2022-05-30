@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import classes from './GalleryMobile.module.scss'
 import Dots from '../Dots/Dots';
 import GalleryItem from '../GalleryItem/GalleryItem';
+import Image from 'next/image';
 
 const GalleryMobile = (props) => {
     const [fullscreen, setFullscreen] = useState(false)
@@ -31,7 +32,11 @@ const GalleryMobile = (props) => {
 
             <div className={classes["slider__image--mobile"]}>
                 <div onClick={openFullscreenHandler} className={classes['slide--img--mobile']}>
-                    <GalleryItem paginate={props.paginate} direction={props.direction} page={props.page} src={props.srcPlaceholder} />
+                    <Image
+                        src={props.srcPlaceholder}
+                        alt={props.altPlaceholder}
+                        layout='fill'
+                        placeholder='blur' />
                     <div className={classes.clickInfo}>
                         <svg>
                             <use xlinkHref="images/icons.svg#icon-zoom-in"></use>

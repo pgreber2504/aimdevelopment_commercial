@@ -2,9 +2,8 @@ import React, { Fragment } from 'react'
 import { motion } from 'framer-motion';
 import classes from './AboutItem.module.scss'
 import { useInView } from 'react-intersection-observer';
-import Image from '../../UI/Image/Image';
-
-
+import Image from 'next/image';
+// import Image from '../../UI/Image/Image';
 
 
 const AboutItem = (props) => {
@@ -71,7 +70,8 @@ const AboutItem = (props) => {
                         <Image
                             src={props.img}
                             alt={props.alt}
-                            isVisible
+                            layout='fill'
+                            placeholder='blur'
                         />)}
                 </div>
             </motion.div>
@@ -90,7 +90,9 @@ const AboutItem = (props) => {
                     <Image
                         src={props.img}
                         alt={props.alt}
-                        isVisible
+                        layout='fill'
+                        placeholder='blur'
+                        style={{ objectFit: 'cover' }}
                     />)}
             </div>
             <div className={classes["about__feature"]}>

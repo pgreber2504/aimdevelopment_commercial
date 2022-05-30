@@ -40,31 +40,12 @@
     position: absolute;
     top: 0;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ccc;
   }
-  .slide--img--mobile,
-  .slide--img--mobile > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-  }
-
-  //   .slide--img--mobile {
-  //     position: fixed;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     background-color: rgba(0, 0, 0, 0.793);
-  //     z-index: 20;
-  //   }
 
   button {
     position: absolute;
@@ -127,10 +108,9 @@
     align-items: center;
   }
 
-  .slide--img--mobile-fullscreen > img {
+  .slide--img--mobile-fullscreen > div {
     width: 100%;
     height: 40%;
-    object-fit: cover;
   }
 
   button {
