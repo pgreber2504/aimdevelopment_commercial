@@ -8,7 +8,6 @@ import { Suspense } from 'react'
 // import Gallery from '../components/Gallery/Gallery'
 import Layout from '../components/Layout/Layout'
 import SectionWrapper from '../components/Layout/SectionWrapper/SectionWrapper'
-import Products from '../components/Products/Products'
 // import Operations from '../components/Operations/Operations'
 import Button from '../components/UI/Button/Button'
 import Modal from '../components/UI/Modal/Modal'
@@ -27,6 +26,10 @@ const Operations = dynamic(() => import('../components/Operations/Operations'), 
 })
 const ContactContainer = dynamic(() => import('../components/Contact/ContactContainer'), {
     ssr: false,
+})
+
+const Products = dynamic(() => import('../components/Products/Products'), {
+    ssr: false
 })
 
 const Landing = () => {

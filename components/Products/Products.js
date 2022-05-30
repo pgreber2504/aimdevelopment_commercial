@@ -6,8 +6,16 @@ import { PRODUCTS_DATA } from '../../constants/products-data';
 
 const Products = () => {
 
-    const products = PRODUCTS_DATA.map(prod => {
-        return <ProductsItem key={prod.id} description={prod.description} title={prod.title} price={prod.minPrice} yardage={prod.yardage} src={prod.photos[0]} alt={'picture'} />
+    const products = PRODUCTS_DATA.map((prod, i) => {
+        return <ProductsItem
+            key={prod.id}
+            description={prod.description}
+            title={prod.title}
+            price={prod.minPrice}
+            yardage={prod.yardage}
+            src={prod.photos[0]}
+            alt={'picture'}
+            reversed={i % 2 === 0} />
     })
 
     return (
