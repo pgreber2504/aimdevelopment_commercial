@@ -7,7 +7,8 @@ import classes from './ProductsItem.module.scss'
 
 const ProductsItem = ({ description, price, title, yardage, src, alt, reversed }) => {
     const { ref, inView } = useInView({
-        threshold: 0.1,
+        threshold: 0,
+        rootMargin: '-20px',
         triggerOnce: true,
     })
 
