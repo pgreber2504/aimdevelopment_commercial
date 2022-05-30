@@ -25,7 +25,7 @@ const menuItemVariants = {
 const MenuItem = (props) => {
     return (
         <motion.li className={classes['sideDrawer__item']} variants={menuItemVariants}>
-            <Link to={props.url} onClick={props.onClick}>
+            <Link to={props.url} onClick={props.onClick} smooth={true}>
                 <span className={classes["text-placeholder"]}>{props.text}</span>
             </Link>
         </motion.li>

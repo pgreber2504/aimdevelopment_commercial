@@ -2,13 +2,12 @@ import Image from 'next/image'
 import React from 'react'
 import classes from './ProductPhotos.module.scss';
 
-import Photo from '../../../../public/images/offer/1.jpeg';
 import ArrowButton from '../../../UI/ArrowButton/ArrowButton';
 
-const ProductPhotos = () => {
+const ProductPhotos = ({ src, alt }) => {
     return (
         <div className={classes['product--photos']}>
-            <Image src={Photo} alt='something' layout='fill' placeholder='blur' />
+            <Image src={src} alt={alt} layout='fill' placeholder='blur' />
             <ArrowButton direction={'left'} />
             <ArrowButton direction={'right'} />
         </div>
