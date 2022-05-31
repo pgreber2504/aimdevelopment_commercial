@@ -10,12 +10,16 @@
   width: 20rem;
   height: 10rem;
   background: white;
-  margin: 1rem;
+  margin: 5rem 2rem;
   border-radius: 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include breakpoint(large) {
+    margin: 1rem;
+  }
 }
 
 .sended {
