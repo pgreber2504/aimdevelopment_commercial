@@ -14,6 +14,11 @@ const useInput = (useValidate) => {
     }
 
     const inputValueChange = (e) => {
+        if (!e) {
+            setInput('');
+            setTouched(false)
+            return
+        }
         setInput(e.target.value)
     }
 

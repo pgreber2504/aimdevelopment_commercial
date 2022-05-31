@@ -1,0 +1,27 @@
+@import "../../../styles/shared";
+
+.notification--test {
+  position: fixed;
+  padding: 1rem;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000000;
+  width: 20rem;
+  height: 10rem;
+  background: white;
+  margin: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sended {
+  background: $color-primary;
+}
+
+.error {
+  background: $color-tertiary;
+}

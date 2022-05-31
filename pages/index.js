@@ -1,43 +1,31 @@
-import { AnimatePresence } from 'framer-motion'
-import dynamic from 'next/dynamic'
 import React, { useContext } from 'react'
-import { Suspense } from 'react'
+import ModalContext from '../contexts/modal-context'
+import { AnimatePresence } from 'framer-motion'
 
-// import About from '../components/About/About'
-// import ContactContainer from '../components/Contact/ContactContainer'
-// import Gallery from '../components/Gallery/Gallery'
+import About from '../components/About/About'
+import ContactContainer from '../components/Contact/ContactContainer'
+import Gallery from '../components/Gallery/Gallery'
 import Layout from '../components/Layout/Layout'
 import SectionWrapper from '../components/Layout/SectionWrapper/SectionWrapper'
-// import Operations from '../components/Operations/Operations'
+import Operations from '../components/Operations/Operations'
 import Button from '../components/UI/Button/Button'
 import Modal from '../components/UI/Modal/Modal'
-import ModalContext from '../contexts/modal-context'
-
-
-const About = dynamic(() => import('../components/About/About'), {
-    ssr: false,
-})
-
-const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
-    ssr: false,
-})
-const Operations = dynamic(() => import('../components/Operations/Operations'), {
-    ssr: false,
-})
-const ContactContainer = dynamic(() => import('../components/Contact/ContactContainer'), {
-    ssr: false,
-})
-
-const Products = dynamic(() => import('../components/Products/Products'), {
-    ssr: false
-})
+import Products from '../components/Products/Products';
+import Notification from '../components/UI/Notification/Notification';
+import httpContext from '../contexts/http-context'
 
 const Landing = () => {
     const modalCtx = useContext(ModalContext);
-
+    const { status, setStatus } = useContext(httpContext);
     const openModal = () => {
         modalCtx.showModal()
     }
+
+    const clearStatus = () => {
+        setStatus(null)
+    }
+
+    const notificationHelper = status === 'sended' || status === 'error';
 
     return (
         <Layout>
@@ -49,6 +37,11 @@ const Landing = () => {
             >
                 {modalCtx.isShow && <Modal />}
             </AnimatePresence>
+
+            <AnimatePresence initial={false}>
+                {notificationHelper && <Notification status={status} close={clearStatus} />}
+            </AnimatePresence>
+
             <SectionWrapper
                 id={'section--info'}
                 phoneNumber={'509-513-513'}

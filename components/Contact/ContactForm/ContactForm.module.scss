@@ -81,9 +81,9 @@
   }
 
   button:disabled {
-    background: #666;
-    color: #444;
-    border: 1px solid #444;
+    background: transparent;
+    color: #888;
+    border: 1px solid #888;
     cursor: not-allowed;
 
     &::after {
@@ -91,10 +91,10 @@
     }
 
     &:hover {
-      background: #666;
+      background: transparent;
       filter: none;
-      color: inherit;
-      border: 1px solid #444;
+      color: #888;
+      border: 1px solid #888;
     }
 
     &:hover::after {

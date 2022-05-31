@@ -3,6 +3,8 @@ import classes from './ContactForm.module.scss'
 import useInput from '../../../hooks/use-input'
 import useValidation from '../../../hooks/use-validation'
 import { motion } from 'framer-motion'
+import useHttp from '../../../hooks/use-http'
+import { MAIL_URL } from '../../../constants/mail-data'
 
 const dropInleft = {
     hidden: {
@@ -59,14 +61,40 @@ const ContactForm = ({ inView }) => {
         inputValueChange: messageChangeHandler,
     } = useInput(input => emptyCheck(input))
 
-    const formIsValid = nameIsValid && phoneIsValid && emailIsValid && messageIsValid
+    const { fetchData } = useHttp();
 
-    const submitMailHandler = e => {
+    const formIsValid = nameIsValid && phoneIsValid && emailIsValid && messageIsValid;
+
+    const clearInputs = () => {
+        nameChangeHandler();
+        phoneChangeHandler();
+        emailChangeHandler();
+        messageChangeHandler();
+    }
+
+    const submitMailHandler = async (e) => {
         e.preventDefault();
 
-        if (!formIsInvalid) {
+        if (!formIsValid) {
             return
         }
+
+        const emailData = {
+            name: nameInput,
+            phone: phoneInput,
+            email: emailInput,
+            message: messageInput
+        }
+
+        fetchData({
+            url: MAIL_URL,
+            method: 'POST',
+            body: JSON.stringify(emailData)
+        })
+
+        clearInputs()
+
+
     }
 
     return (
@@ -75,15 +103,16 @@ const ContactForm = ({ inView }) => {
             variants={dropInleft}
             animate={inView ? 'visible' : 'hidden'}
             onSubmit={submitMailHandler}>
-            <input required className={nameIsInvalid ? classes.invalid : ''} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" name="name" placeholder="Imię i Nazwisko*" />
-            <input required className={phoneIsInvalid ? classes.invalid : ''} onChange={phoneChangeHandler} onBlur={phoneBlurHandler} type="number" name="number" placeholder="Numer telefonu*" />
-            <input required className={emailIsInvalid ? classes.invalid : ''} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" name="email" placeholder="Adres e-mail*" />
+            <input required className={nameIsInvalid ? classes.invalid : ''} value={nameInput} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" name="name" placeholder="Imię i Nazwisko*" />
+            <input required className={phoneIsInvalid ? classes.invalid : ''} value={phoneInput} onChange={phoneChangeHandler} onBlur={phoneBlurHandler} type="number" name="number" placeholder="Numer telefonu*" />
+            <input required className={emailIsInvalid ? classes.invalid : ''} value={emailInput} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" name="email" placeholder="Adres e-mail*" />
 
             <textarea
                 required
                 className={messageIsInvalid ? classes.invalid : ''}
                 onChange={messageChangeHandler}
                 onBlur={messageBlurHandler}
+                value={messageInput}
                 type="text"
                 name="name"
                 placeholder="Napisz wiadomość*"

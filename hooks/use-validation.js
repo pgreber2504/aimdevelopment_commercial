@@ -5,7 +5,6 @@ const useValidation = () => {
     }
 
     const nameValidation = (input) => {
-        console.log('hello');
         return input
             .toString()
             .trim()
