@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import classes from './Button.module.scss'
-motion
 
 const Button = (props) => {
     const cssClasses = `${classes.button} ${props.className}`
 
     if (props.animated) {
-
         return (
             <motion.button
                 whileHover={{ scale: 1.1 }}

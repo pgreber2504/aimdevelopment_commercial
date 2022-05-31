@@ -8,14 +8,14 @@ export default function handler(req, res) {
     const message = `
                 Imie i nazwisko: ${body.name}\r\n
                 Email: ${body.email}\r\n
-                ${body.phone ? `Phone Number: ${body.phone}` : ''}\r\n
-                Message: ${body.message}
+                ${body.phone ? `Numer telefonu: ${body.phone}` : ''}\r\n
+                Wiadomość: ${body.message}
                 `;
 
     mail.send({
         to: 'zamowienia@stylovehome.pl',
         from: 'zamowienia@stylovehome.pl',
-        subject: 'Nowa wiadomośc! Domy modułowe',
+        subject: 'Nowa wiadomość! Domy modułowe',
         text: message,
         html: message.replace(/\r\n/g, '<br>'),
     }).then(() => {

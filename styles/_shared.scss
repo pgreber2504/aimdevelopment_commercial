@@ -15,11 +15,6 @@ $font-section-descr: 2rem;
 $font-big-header: 3.2rem;
 $font-big-desc: 2.5rem;
 
-$media-min-mobile-width: 320px;
-$media-min-tablet-width: 576px;
-$media-min-desktop-width: 768px;
-$media-min-large-desktop-width: 1280px;
-
 @mixin breakpoint($point) {
   @if $point == small {
     @media (min-width: 20em) {
@@ -37,20 +32,12 @@ $media-min-large-desktop-width: 1280px;
 }
 
 @mixin fluid-typography($minFont, $maxFont, $minBreakpoint, $maxBreakpoint) {
-  /* Define variable for media query */
   $maxLessOne: $maxBreakpoint - 1;
-
-  /* Define variable for fallback */
   $avg: ($maxFont + $minFont) / 2;
-
-  /* Base font size */
   font-size: #{$minFont}px;
 
   @media (min-width: #{$minBreakpoint}px) and (max-width: #{$maxLessOne}px) {
-    /* Adds a fallback for unsupported browsers */
     font-size: #{$avg}px;
-
-    /* The fluid typography magic 🌟  */
     font-size: calc(
       #{$minFont}px + (#{$maxFont} - #{$minFont}) *
         (100vw - #{$minBreakpoint}px) / (#{$maxBreakpoint} - #{$minBreakpoint})

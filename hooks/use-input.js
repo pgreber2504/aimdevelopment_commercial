@@ -22,7 +22,6 @@ const useInput = (useValidate) => {
         setInput(e.target.value)
     }
 
-
     return {
         input,
         touched,

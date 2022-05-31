@@ -12,7 +12,7 @@ const Path = props => (
     />
 );
 
-export const CloseButton = ({ close }) => (
+const CloseButton = ({ close }) => (
     <button onClick={close} className={classes.close}>
         <svg width="23" height="23" viewBox="0 0 23 23">
             <Path d="M 3 16.5 L 17 2.5" />
@@ -20,3 +20,5 @@ export const CloseButton = ({ close }) => (
         </svg>
     </button>
 );
+
+export default CloseButton

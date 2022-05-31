@@ -16,14 +16,13 @@ const useHttp = () => {
                 }
             })
             if (!response.ok) {
-                throw new Error('Something went wrong')
+                throw new Error('error')
             }
             const data = await response.json();
             if (applyData) { applyData(data) };
             setStatus('sended')
             setIsLoading(false);
         } catch (error) {
-            console.log(error);
             setStatus('error')
             setIsLoading(false)
         }

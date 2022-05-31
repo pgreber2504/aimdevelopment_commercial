@@ -8,9 +8,7 @@
 
 html {
   @include fluid-typography(10, 14, 320, 1500);
-  // font-size: 62.5%;
   box-sizing: border-box;
-
   overflow-x: hidden;
   scroll-behavior: smooth;
 }

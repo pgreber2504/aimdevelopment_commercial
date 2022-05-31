@@ -2,7 +2,8 @@ import React from 'react'
 import classes from './GalleryDesktop.module.scss';
 
 import Dots from '../Dots/Dots'
-import GalleryItem from '../GalleryItem/GalleryItem'
+import GalleryItem from '../GalleryItem/GalleryItem';
+import ArrowButton from '../../UI/ArrowButton/ArrowButton';
 
 const GalleryDesktop = (props) => {
     return (
@@ -10,8 +11,8 @@ const GalleryDesktop = (props) => {
             <div className={classes['slide--img']}>
                 <GalleryItem paginate={props.paginate} direction={props.direction} page={props.page} src={props.src} />
             </div>
-            <button onClick={props.lBtnOnClick} className={classes["slider__btn--left--img"]}>&larr;</button>
-            <button onClick={props.rBtnOnClick} className={classes["slider__btn--right--img"]}>&rarr;</button>
+            <ArrowButton lBtnOnClick={props.lBtnOnClick} direction='left' />
+            <ArrowButton rBtnOnClick={props.rBtnOnClick} direction='right' />
             <Dots data={props.data} imageIndex={props.imageIndex} />
         </div>
     )

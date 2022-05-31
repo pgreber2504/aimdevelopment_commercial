@@ -2,9 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import classes from './Notification.module.scss';
-import { CloseButton } from "../CloseButton/CloseButton";
-
-// import { CloseButton } from "./CloseButton";
+import CloseButton from "../CloseButton/CloseButton";
 
 const Notification = ({ status, close }) => {
 
