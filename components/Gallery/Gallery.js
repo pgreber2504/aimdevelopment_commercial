@@ -2,7 +2,7 @@ import React, { useState, useCallback, Fragment } from 'react'
 import { wrap } from "popmotion";
 
 import GalleryDesktop from './GalleryDesktop/GalleryDesktop';
-import GalleryMobile from './GalleryMobile.js/GalleryMobile';
+import GalleryMobile from './GalleryMobile/GalleryMobile';
 import { GALLERY_DATA } from '../../constants/gallery-data';
 
 

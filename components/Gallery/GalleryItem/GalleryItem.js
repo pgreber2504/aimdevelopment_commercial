@@ -48,7 +48,7 @@ const GalleryItem = (props) => {
             <AnimatePresence initial={false} custom={props.direction} exitBeforeEnter={props.fullscreen}>
                 <motion.div
                     key={props.page}
-
+                    data-testid='GalleryItem.div'
                     custom={props.direction}
                     variants={props.fullscreen ? fullscreenVariants : variants}
                     initial="enter"
@@ -59,6 +59,7 @@ const GalleryItem = (props) => {
                     }}
                 >
                     <Image
+                        data-testid='GalleryItem.img'
                         src={props.src}
                         alt={props.alt}
                         layout='fill'
