@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch"
+    "unitTest": "jest --watch",
+    "e2e": "cypress open"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
@@ -25,6 +26,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.0",
+    "cypress": "^9.7.0",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
     "intersection-observer": "^0.12.0",

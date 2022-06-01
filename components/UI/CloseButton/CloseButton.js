@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const Path = props => (
     <motion.path
+        data-testid='path'
         fill="transparent"
         strokeWidth="3"
         stroke="hsl(0, 0%, 18%)"
