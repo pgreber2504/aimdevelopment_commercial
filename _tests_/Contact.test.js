@@ -1,8 +1,7 @@
 import Address from '../components/Contact/Address/Address';
-import ContactForm from '../components/Contact/ContactForm/ContactForm'
-import '@testing-library/jest-dom'
-import userEvent from '@testing-library/user-event'
-import { render, fireEvent, screen } from '@testing-library/react';
+import ContactForm from '../components/Contact/ContactForm/ContactForm';
+import '@testing-library/jest-dom';
+import { render, fireEvent } from '@testing-library/react';
 
 
 const formHelper = ({ email, name, phone, message }) => {
