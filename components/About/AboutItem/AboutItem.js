@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import classes from './AboutItem.module.scss'
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
-// import Image from '../../UI/Image/Image';
 
 
 const AboutItem = (props) => {
@@ -81,7 +80,6 @@ const AboutItem = (props) => {
     return (
         <motion.div
             variants={dropInleft}
-            // initial='hidden'
             animate={inView ? 'visible' : 'hidden'}
             className={classes['about__container']}
             ref={ref}>
@@ -97,7 +95,7 @@ const AboutItem = (props) => {
             </div>
             <div className={classes["about__feature"]}>
                 <div className={classes["about__icon"]}>
-                    <svg>
+                    <svg data-testid="custom-element">
                         <use xlinkHref="images/icons.svg#icon-home"></use>
                     </svg>
                 </div>
