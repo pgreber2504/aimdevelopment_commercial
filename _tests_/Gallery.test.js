@@ -5,8 +5,16 @@ import Dots from '../components/Gallery/Dots/Dots';
 import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
 
-import Image from '../public/images/gallery/1.webp'
-import Image2 from '../public/images/gallery/2.webp';
+import Image from '../public/images/gallery/1.webp';
+
+const galleryProps = {
+    srcPlaceholder: Image,
+    src: Image,
+    alt: 'image',
+    altPlaceholder: 'image',
+    data: [0, 1],
+    page: 0,
+}
 
 
 describe('<GalleryItem />', () => {
@@ -23,30 +31,19 @@ describe('<GalleryItem />', () => {
         expect(image).toBeInTheDocument();
         expect(div).toBeInTheDocument();
     });
-
-
 })
 
 describe('<GalleryMobile />', () => {
-    const props = {
-        srcPlaceholder: Image,
-        src: Image,
-        alt: 'image',
-        altPlaceholder: 'image',
-        data: [0, 1],
-        rBtnOnClick: jest.fn(() => 1),
-        lBtnOnClick: jest.fn(() => -1),
-        page: 0,
-    }
+
     it('fullscreen should not be visible initially ', () => {
-        const { queryByTestId } = render(<GalleryMobile {...props} />)
+        const { queryByTestId } = render(<GalleryMobile {...galleryProps} />)
 
         const fullscreenContainer = queryByTestId('fullscreen-container');
         expect(fullscreenContainer).not.toBeInTheDocument()
     });
 
     it("should open fullscreen on click", () => {
-        const { getByTestId, queryByTestId } = render(<GalleryMobile {...props} />)
+        const { getByTestId, queryByTestId } = render(<GalleryMobile {...galleryProps} />)
 
         const clickableContainer = getByTestId('clickable-container');
         fireEvent.click(clickableContainer);
@@ -56,18 +53,8 @@ describe('<GalleryMobile />', () => {
 });
 
 describe('<GalleryDesktop />', () => {
-    const props = {
-        srcPlaceholder: Image,
-        src: Image,
-        alt: 'image',
-        altPlaceholder: 'image',
-        data: [0, 1],
-        rBtnOnClick: jest.fn(() => 1),
-        lBtnOnClick: jest.fn(() => -1),
-        page: 0,
-    }
     it('should be rendered', () => {
-        const { getByTestId } = render(<GalleryDesktop {...props} />);
+        const { getByTestId } = render(<GalleryDesktop {...galleryProps} />);
         const galleryDesktopContainer = getByTestId('gallery-desktop-container')
         expect(galleryDesktopContainer).toBeInTheDocument()
     });
