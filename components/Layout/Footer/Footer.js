@@ -4,6 +4,8 @@ import FooterLogo from './FooterLogo/FooterLogo'
 import FooterNav from './FooterNav/FooterNav'
 
 const Footer = () => {
+
+
     return (
         <footer className={classes.footer}>
             <FooterNav />

@@ -2,13 +2,7 @@ import React from 'react'
 import classes from './FooterNav.module.scss';
 import Link from 'next/link'
 
-
-const FOOTER_NAV_LINKS = [
-    { url: "#1", text: 'O nas' },
-    { url: "#2", text: 'Regulamin' },
-    { url: "#3", text: 'Polityka prywatności' },
-    { url: "#4", text: 'Kontakt' },
-]
+import { FOOTER_NAV_LINKS } from '../../../../constants/footer-nav-data';
 
 const FooterNav = () => {
     const footerLinks = FOOTER_NAV_LINKS.map(link => {
