@@ -41,6 +41,6 @@ describe('<Notification />', () => {
         const text = queryByText('Wiadomośc została wysłana.')
         const button = queryByRole('button')
         fireEvent.click(button);
-        expect(text).not.toBeInTheDocument()
+        expect(text).not.toBeInTheDocument();
     });
 })
