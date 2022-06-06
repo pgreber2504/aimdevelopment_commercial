@@ -10,7 +10,11 @@ function MyApp({ Component, pageProps }) {
     <HttpContextProvider>
       <ModalContextProvider>
         <Head>
+          <title>AIM Development - Domy modułowe oraz domy mobilne</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="robots" content="max-image-preview:large"></meta>
+          <meta name='title' content='AIM Development - Domy modułowe oraz domy mobilne'></meta>
+          <meta name="description" content="" />
         </Head>
         <Component {...pageProps} />
       </ModalContextProvider>

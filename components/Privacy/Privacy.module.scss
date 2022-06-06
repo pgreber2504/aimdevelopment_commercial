@@ -7,3 +7,16 @@
     margin: 0 8rem;
   }
 }
+
+.back-button {
+  position: absolute;
+  top: 0;
+  left: 8rem;
+  background: transparent;
+  color: $color-primary;
+  font-size: $font-header;
+
+  &:hover {
+    background: transparent;
+  }
+}
