@@ -4,7 +4,7 @@ import classes from './Navigation.module.scss';
 import ModalContext from '../../../../contexts/modal-context';
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion';
-
+import Logo from '../../../UI/Logo/Logo'
 import Button from '../../../UI/Button/Button';
 import SideDrawer from '../SideDrawer/SideDrawer';
 
@@ -64,7 +64,7 @@ const Navigation = (props) => {
             variants={dropInTop}
             initial={'hidden'}
             animate={!props.inView ? 'visible' : 'hidden'}>
-            <img />
+            <Logo />
             <ul className={classes.nav__links}>
                 {navLinks}
                 <li className="nav__item">

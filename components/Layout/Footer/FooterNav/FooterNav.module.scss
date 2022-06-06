@@ -5,10 +5,11 @@
   display: flex;
   justify-content: space-evenly;
   margin: 0 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 
   @include breakpoint(large) {
     margin: 0 6rem;
+    margin-bottom: 3rem;
   }
 
   a {
