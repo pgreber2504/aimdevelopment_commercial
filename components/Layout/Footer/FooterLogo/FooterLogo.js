@@ -3,13 +3,14 @@ import classes from './FooterLogo.module.scss'
 
 import Link from 'next/link';
 import Image from 'next/image';
+import Logo from '../../../UI/Logo/Logo';
 
 
 const FooterLogo = () => {
     return (
         <Fragment>
             <div className={classes["footer__logo"]}>
-                {/* <Image layout='fill' src={''} /> */}
+                <Logo />
             </div>
             <p className={classes["footer__copyright"]}>
                 &copy; Copyright by <Link
