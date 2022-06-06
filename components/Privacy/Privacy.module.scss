@@ -1,0 +1,9 @@
+@import "../../styles/shared";
+
+.privacy {
+  font-size: $font-content;
+
+  @include breakpoint(large) {
+    margin: 0 8rem;
+  }
+}
