@@ -27,8 +27,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://domy-mobilne-commercial.vercel.app/">
-    <img src="public/images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://aimdevelopment.pl">
+    <img src="public/images/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Domy-Modułowe-Mobilne</h3>
