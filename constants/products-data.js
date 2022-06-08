@@ -43,7 +43,7 @@ export const PRODUCTS_DATA = [
         name: 'Dom niestandardowy',
         description: 'Jesteśmy w stanie zbudowac dla Ciebie niestandadowy dom. Wybierasz wyposażenie, rozkład i rodzaj, a my zajmujemy się resztą ',
         minPrice: 100000,
-        photos: [Cust1]
+        photos: [Cust1],
 
     },
 

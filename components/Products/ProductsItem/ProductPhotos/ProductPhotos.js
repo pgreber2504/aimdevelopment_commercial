@@ -4,13 +4,15 @@ import classes from './ProductPhotos.module.scss';
 
 import ArrowButton from '../../../UI/ArrowButton/ArrowButton';
 
-const ProductPhotos = ({ src, alt }) => {
+const ProductPhotos = ({ src, alt, lBtnOnClick, rBtnOnClick }) => {
+
     return (
-        <div className={classes['product--photos']}>
+        <div
+            className={classes['product--photos']}>
             <Image src={src} alt={alt} layout='fill' placeholder='blur' />
-            <ArrowButton direction={'left'} />
-            <ArrowButton direction={'right'} />
-        </div>
+            <ArrowButton direction={'left'} lBtnOnClick={lBtnOnClick} />
+            <ArrowButton direction={'right'} rBtnOnClick={rBtnOnClick} />
+        </div >
     )
 }
 

@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ProductDetails from './ProductDetails/ProductDetails'
 import ProductPhotos from './ProductPhotos/ProductPhotos'
 import classes from './ProductsItem.module.scss'
 
-const ProductsItem = ({ description, price, name, yardage, src, alt, reversed }) => {
+const ProductsItem = ({ description, price, name, yardage, photos, alt, reversed, rBtnOnClick, lBtnOnClick }) => {
+    const [counter, setCounter] = useState(0);
     const { ref, inView } = useInView({
         threshold: 0,
         rootMargin: '-20px',
@@ -29,7 +30,20 @@ const ProductsItem = ({ description, price, name, yardage, src, alt, reversed })
         }
     }
 
-    console.log(inView);
+    const rightButtonHandler = () => {
+        if (photos.length === counter + 1) {
+            setCounter(0);
+        }
+        else setCounter(prev => ++prev)
+    }
+
+    const leftButtonHandler = () => {
+        if (1 === counter + 1) {
+            setCounter(photos.length - 1);
+        }
+        else setCounter(prev => --prev)
+    }
+
     return (
         <motion.div
             ref={ref}
@@ -38,7 +52,7 @@ const ProductsItem = ({ description, price, name, yardage, src, alt, reversed })
             initial='initial'
             animate={inView ? 'animate' : 'initial'}
             exit='exit'>
-            <ProductPhotos src={src} alt={alt} />
+            <ProductPhotos src={photos[counter]} alt={alt} lBtnOnClick={leftButtonHandler} rBtnOnClick={rightButtonHandler} />
             <ProductDetails description={description} price={price} name={name} yardage={yardage} />
         </motion.div>
     )
