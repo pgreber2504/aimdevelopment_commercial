@@ -77,6 +77,10 @@ const Modal = (props) => {
 
     const formIsValid = nameIsValid && lastNameIsValid && emailIsValid
 
+    const submitHandler = e => {
+        e.preventDefault();
+        return
+    }
 
     const closeModal = () => {
         modalCtx.closeModal()
@@ -98,14 +102,16 @@ const Modal = (props) => {
                         Pobierz nasz katalog <br />
                         w niecałe <span className="highlight">5 minut</span>
                     </h2>
-                    <form onSubmit={props.onSubmit} className={classes["modal__form"]}>
+                    <form onSubmit={submitHandler} className={classes["modal__form"]}>
+                        <p className={classes.info}>Katalog obecnie niedostępny! Przepraszamy za utrudnienia</p>
+
                         <label>Imię</label>
                         <input className={nameIsInvalid && classes.invalid} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" required min={1} max={20} />
                         <label>Nazwisko</label>
                         <input className={lastNameIsInvalid && classes.invalid} onChange={lastNameChangeHandler} onBlur={lastNameBlurHandler} type="text" required min={1} max={20} />
                         <label>Adres E-Mail</label>
                         <input className={emailIsInvalid && classes.invalid} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" required />
-                        <Button disabled={!formIsValid}>Pobierz katalog &rarr;</Button>
+                        <Button disabled={true}>Pobierz katalog &rarr;</Button>
                     </form>
                 </motion.div>
             </Overlay>

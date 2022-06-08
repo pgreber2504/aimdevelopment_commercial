@@ -33,9 +33,6 @@ const SectionWrapper = (props) => {
 
     const titleClasses = `${classes['section__title']} ${props.titleClass ? classes[props.titleClass] : ''}`
 
-
-
-
     if (props.id === 'section--info') {
         return (
             <section className={classes["section--info"]} id="section--info">
@@ -48,8 +45,8 @@ const SectionWrapper = (props) => {
                     <svg>
                         <use xlinkHref="images/icons.svg#icon-phone"></use>
                     </svg>
-                    <h1>ZADZWOŃ DO NAS:</h1>
-                    <h2>{props.phoneNumber}</h2>
+                    <h2>ZADZWOŃ DO NAS:</h2>
+                    <h3>{props.phoneNumber}</h3>
                 </motion.div>
 
                 <motion.div
@@ -61,8 +58,8 @@ const SectionWrapper = (props) => {
                     <svg>
                         <use xlinkHref="images/icons.svg#icon-mail"></use>
                     </svg>
-                    <h1>NAPISZ DO NAS:</h1>
-                    <h2>{props.email}</h2>
+                    <h2>NAPISZ DO NAS:</h2>
+                    <h3>{props.email}</h3>
                 </motion.div>
 
                 <motion.div
@@ -74,15 +71,11 @@ const SectionWrapper = (props) => {
                     <svg>
                         <use xlinkHref="images/icons.svg#icon-map-pin"></use>
                     </svg>
-                    <h1>NASZA LOKALIZACJA</h1>
-                    <h2>{props.address}</h2>
+                    <h2>NASZA LOKALIZACJA</h2>
+                    <h3>{props.address}</h3>
                 </motion.div>
             </section>
         )
-    }
-
-    if (props.intersect) {
-
     }
 
     return (

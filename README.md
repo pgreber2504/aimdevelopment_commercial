@@ -151,9 +151,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [x] Basic Version of site
-- [x] Testing
-- [ ] New photos of houses
+
+- [x] Finished basic Version
+- [x] Added slider to product review
+- [ ] insert more product photos
+- [ ] finish integration and unit testing
+- [ ] finish e2e testing
 
 
 See the [open issues](https://github.com/pgreber2504/domy_mobilne_commercial/issues) for a full list of proposed features (and known issues).
