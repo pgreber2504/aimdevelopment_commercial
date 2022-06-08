@@ -147,13 +147,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
+- [x] Finished basic Version
+- [x] Added slider to product review
+- [ ] insert more product photos
+- [ ] finish integration and unit testing
+- [ ] finish e2e testing
 
 See the [open issues](https://github.com/pgreber2504/domy_mobilne_commercial/issues) for a full list of proposed features (and known issues).
 

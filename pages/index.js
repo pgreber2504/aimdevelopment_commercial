@@ -13,6 +13,7 @@ import Modal from '../components/UI/Modal/Modal'
 import Products from '../components/Products/Products';
 import Notification from '../components/UI/Notification/Notification';
 import httpContext from '../contexts/http-context'
+import { ADDRESS, EMAIL, PHONE } from '../constants/contact-data'
 
 const Landing = () => {
     const modalCtx = useContext(ModalContext);
@@ -44,9 +45,9 @@ const Landing = () => {
 
             <SectionWrapper
                 id={'section--info'}
-                phoneNumber={'509-513-513'}
-                email={'test@test.com'}
-                address={'Łódź, Sportowa 2'}
+                phoneNumber={PHONE}
+                email={EMAIL}
+                address={ADDRESS}
             />
             <SectionWrapper
                 id={'section--1'}
@@ -81,7 +82,7 @@ const Landing = () => {
                 title={'Kontakt'}
                 description={'Skontaktuj się z nami'}
                 intersect={true}>
-                <ContactContainer phone={'509-513-513'} email={'test@test.com'} address={'Łódź, Sportowa 2'} />
+                <ContactContainer phone={PHONE} email={EMAIL} address={ADDRESS} />
             </SectionWrapper>
             <SectionWrapper
                 id={'section--6'}
