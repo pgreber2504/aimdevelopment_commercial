@@ -11,6 +11,7 @@ import useValidation from '../../../hooks/use-validation';
 const Overlay = (props) => {
     return (
         <motion.div
+            data-testid='overlay'
             onClick={props.onClick}
             className={classes.overlay}
             initial={{ opacity: 0 }}
@@ -43,7 +44,7 @@ const dropIn = {
 };
 
 
-const Modal = (props) => {
+const Modal = () => {
     const modalCtx = useContext(ModalContext)
     const { nameValidation, emailValidation } = useValidation();
 
@@ -96,21 +97,22 @@ const Modal = (props) => {
                     initial='hidden'
                     animate='visible'
                     exit='exit'
+                    data-testid='modalContainer'
                 >
                     <button onClick={closeModal} className={classes["btn--close-modal"]}>&times;</button>
                     <h2 className={classes["modal__header"]}>
                         Pobierz nasz katalog <br />
-                        w niecałe <span className="highlight">5 minut</span>
+                        w niecałe <span className={classes.highlight}>5 minut</span>
                     </h2>
                     <form onSubmit={submitHandler} className={classes["modal__form"]}>
                         <p className={classes.info}>Katalog obecnie niedostępny! Przepraszamy za utrudnienia</p>
 
                         <label>Imię</label>
-                        <input className={nameIsInvalid && classes.invalid} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" required min={1} max={20} />
+                        <input className={nameIsInvalid ? classes.invalid : ''} onChange={nameChangeHandler} onBlur={nameBlurHandler} type="text" required min={1} max={20} />
                         <label>Nazwisko</label>
-                        <input className={lastNameIsInvalid && classes.invalid} onChange={lastNameChangeHandler} onBlur={lastNameBlurHandler} type="text" required min={1} max={20} />
+                        <input className={lastNameIsInvalid ? classes.invalid : ''} onChange={lastNameChangeHandler} onBlur={lastNameBlurHandler} type="text" required min={1} max={20} />
                         <label>Adres E-Mail</label>
-                        <input className={emailIsInvalid && classes.invalid} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" required />
+                        <input className={emailIsInvalid ? classes.invalid : ''} onChange={emailChangeHandler} onBlur={emailBlurHandler} type="email" required />
                         <Button disabled={true}>Pobierz katalog &rarr;</Button>
                     </form>
                 </motion.div>
