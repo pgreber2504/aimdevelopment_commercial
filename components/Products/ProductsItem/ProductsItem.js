@@ -5,7 +5,7 @@ import ProductDetails from './ProductDetails/ProductDetails'
 import ProductPhotos from './ProductPhotos/ProductPhotos'
 import classes from './ProductsItem.module.scss'
 
-const ProductsItem = ({ description, price, name, yardage, photos, alt, reversed, rBtnOnClick, lBtnOnClick }) => {
+const ProductsItem = ({ description, price, name, yardage, photos, alt, reversed }) => {
     const [counter, setCounter] = useState(0);
     const { ref, inView } = useInView({
         threshold: 0,
