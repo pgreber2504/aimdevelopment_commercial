@@ -27,8 +27,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://domy-mobilne-commercial.vercel.app/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://aimdevelopment.pl">
+    <img src="public/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Domy-Modułowe-Mobilne</h3>
@@ -99,6 +99,10 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 - [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.org/)
+- [SASS](https://sass-lang.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Jest](https://jestjs.io/)
+- [Cypress](https://www.cypress.io/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -147,11 +151,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
+
 - [x] Finished basic Version
 - [x] Added slider to product review
 - [ ] insert more product photos
 - [ ] finish integration and unit testing
 - [ ] finish e2e testing
+
 
 See the [open issues](https://github.com/pgreber2504/domy_mobilne_commercial/issues) for a full list of proposed features (and known issues).
 
