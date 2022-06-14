@@ -56,7 +56,7 @@ export const PRODUCTS_DATA = [
     {
         id: 'pr5',
         yardage: '41m2',
-        name: 'Dom Z Mniejsza wersja',
+        name: 'Dom "Z" Mniejsza wersja',
         description: 'Moduł w kształcie litery „Z” to połączenie czterech modułów umożliwiające uzyskanie dowolnego metrażu oraz zagospodarowania budynku jako jednorodzinny lub wielorodzinny obiekt. Poprzez przesunięcia modułów mamy możliwość dopasowania go do działki oraz potrzeb nawet najbardziej wymagających osób.',
         minPrice: 140000,
         photos: [ZSmall]
@@ -73,7 +73,7 @@ export const PRODUCTS_DATA = [
     {
         id: 'pr7',
         yardage: '70m2',
-        name: 'Dom Z',
+        name: 'Dom "Z"',
         description: 'Moduł w kształcie litery „Z” to połączenie czterech modułów umożliwiające uzyskanie dowolnego metrażu oraz zagospodarowania budynku jako jednorodzinny lub wielorodzinny obiekt. Poprzez przesunięcia modułów mamy możliwość dopasowania go do działki oraz potrzeb nawet najbardziej wymagających osób.',
         minPrice: 140000,
         photos: [Z1]
