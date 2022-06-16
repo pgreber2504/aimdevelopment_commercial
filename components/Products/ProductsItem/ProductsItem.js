@@ -1,12 +1,22 @@
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { wrap } from "popmotion";
 import ProductDetails from './ProductDetails/ProductDetails'
 import ProductPhotos from './ProductPhotos/ProductPhotos'
 import classes from './ProductsItem.module.scss'
 
 const ProductsItem = ({ description, price, name, yardage, photos, alt, reversed }) => {
-    const [counter, setCounter] = useState(0);
+    const [[page, direction], setPage] = useState([0, 0]);
+    const numOfPhotos = photos.length
+
+    const imageIndex = wrap(0, numOfPhotos, page);
+
+    const paginate = useCallback((newDirection) => {
+        setPage([page + newDirection, newDirection]);
+    }, [setPage, page]);
+
+
     const { ref, inView } = useInView({
         threshold: 0,
         rootMargin: '-20px',
@@ -30,20 +40,6 @@ const ProductsItem = ({ description, price, name, yardage, photos, alt, reversed
         }
     }
 
-    const rightButtonHandler = () => {
-        if (photos.length === counter + 1) {
-            setCounter(0);
-        }
-        else setCounter(prev => ++prev)
-    }
-
-    const leftButtonHandler = () => {
-        if (1 === counter + 1) {
-            setCounter(photos.length - 1);
-        }
-        else setCounter(prev => --prev)
-    }
-
     return (
         <motion.div
             ref={ref}
@@ -52,10 +48,11 @@ const ProductsItem = ({ description, price, name, yardage, photos, alt, reversed
             initial='initial'
             animate={inView ? 'animate' : 'initial'}
             exit='exit'>
-            <ProductPhotos src={photos[counter]} alt={alt} lBtnOnClick={leftButtonHandler} rBtnOnClick={rightButtonHandler} />
+            <ProductPhotos page={page} paginate={paginate} direction={direction} src={photos[imageIndex]} alt={alt} lBtnOnClick={() => paginate(-1)} rBtnOnClick={() => paginate(1)} />
             <ProductDetails description={description} price={price} name={name} yardage={yardage} />
         </motion.div>
     )
 }
+
 
 export default ProductsItem
