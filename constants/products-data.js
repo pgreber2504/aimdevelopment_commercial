@@ -29,7 +29,7 @@ export const PRODUCTS_DATA = [
         name: 'Dom prostokąt M',
         description: 'Dom modułowy o powierzchni zabudowy 21m2. Mimo niewielkich rozmiarów mieści, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w dowolnym wybranym miejscu. Moduł o wymiarach obrysowych 3x7m.',
         minPrice: 50000,
-        photos: [RectL, RectL2]
+        photos: [RectM, RectM2]
     },
     {
         id: 'pr2',
@@ -37,7 +37,7 @@ export const PRODUCTS_DATA = [
         name: 'Dom prostokąt L + Sypialnia',
         description: 'Dom modułowy o powierzchni zabudowy 28m2. Mieści w sobie sypialnie, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w dowolnym wybranym miejscu. Moduł o wymiarach obrysowych 4x8m.',
         minPrice: 60000,
-        photos: [RectXL, RectXL2],
+        photos: [RectL, RectL2]
     },
     {
         id: 'pr3',
@@ -45,7 +45,8 @@ export const PRODUCTS_DATA = [
         name: 'Dom prostokąt XL + 2x Sypialnia',
         description: 'Dom modułowy o powierzchni zabudowy 35m2. Mimo niewielkich rozmiarów mieści w sobie dwie sypialnie, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w dowolnym wybranym miejscu. Moduł o wymiarach obrysowych 3,5x10m',
         minPrice: 80000,
-        photos: [RectM, RectM2]
+        photos: [RectXL, RectXL2],
+
 
     },
     {
