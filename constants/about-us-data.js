@@ -1,6 +1,6 @@
-import House from '../../public/images/house.webp';
-import Luxury from '../../public/images/luxury.webp';
-import Truck from '/../public/images/truck.webp';
+import House from '../public/images/house.webp';
+import Luxury from '../public/images/luxury.webp';
+import Truck from '../public/images/truck.webp';
 
 export const ABOUT_ITEM_DATA = [
     {
