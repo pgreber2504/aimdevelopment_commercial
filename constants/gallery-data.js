@@ -5,8 +5,8 @@ import Image4 from '../public/images/gallery/4.webp';
 import Image5 from '../public/images/gallery/5.webp';
 import Image6 from '../public/images/gallery/6.webp';
 import Image7 from '../public/images/gallery/7.webp';
-import Image8 from '../public/images/gallery/8.webp';
-import Image9 from '../public/images/gallery/9.webp';
+// import Image8 from '../public/images/gallery/8.webp';
+// import Image9 from '../public/images/gallery/9.webp';
 
 export const GALLERY_DATA = [
     { imgSrc: Image1, alt: 'Photo 1' },
@@ -16,6 +16,7 @@ export const GALLERY_DATA = [
     { imgSrc: Image5, alt: 'Photo 5' },
     { imgSrc: Image6, alt: 'Photo 6' },
     { imgSrc: Image7, alt: 'Photo 7' },
-    { imgSrc: Image8, alt: 'Photo 8' },
-    { imgSrc: Image9, alt: 'Photo 9' },
 ]
+//     { imgSrc: Image8, alt: 'Photo 8' },
+//     { imgSrc: Image9, alt: 'Photo 9' },
+// ]

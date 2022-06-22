@@ -27,31 +27,32 @@ export const PRODUCTS_DATA = [
         id: 'pr1',
         yardage: '21m2',
         name: 'Dom prostokąt M',
-        description: 'Dom modułowy o powierzchni zabudowy 21m2. Mimo niewielkich rozmiarów mieści, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w zaciszu swojego ogródka działkowego. Moduł o wymiarach obrysowych 3x7m.',
-        minPrice: 65000,
-        photos: [RectM, RectM2]
+        description: 'Dom modułowy o powierzchni zabudowy 21m2. Mimo niewielkich rozmiarów mieści, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w dowolnym wybranym miejscu. Moduł o wymiarach obrysowych 3x7m.',
+        minPrice: 50000,
+        photos: [RectL, RectL2]
     },
     {
         id: 'pr2',
         yardage: '28m2',
         name: 'Dom prostokąt L + Sypialnia',
-        description: 'Dom modułowy o powierzchni zabudowy 28m2. Mieści w sobie sypialnie, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w zaciszu swojego ogródka działkowego. Moduł o wymiarach obrysowych 4x8m.',
-        minPrice: 70000,
-        photos: [RectL, RectL2]
+        description: 'Dom modułowy o powierzchni zabudowy 28m2. Mieści w sobie sypialnie, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w dowolnym wybranym miejscu. Moduł o wymiarach obrysowych 4x8m.',
+        minPrice: 60000,
+        photos: [RectXL, RectXL2],
     },
     {
         id: 'pr3',
         yardage: '35m2',
         name: 'Dom prostokąt XL + 2x Sypialnia',
-        description: 'Dom modułowy o powierzchni zabudowy 35m2. Mimo niewielkich rozmiarów mieści w sobie dwie sypialnie, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w zaciszu swojego ogródka działkowego. Moduł o wymiarach obrysowych 3,5x10m',
+        description: 'Dom modułowy o powierzchni zabudowy 35m2. Mimo niewielkich rozmiarów mieści w sobie dwie sypialnie, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w dowolnym wybranym miejscu. Moduł o wymiarach obrysowych 3,5x10m',
         minPrice: 80000,
-        photos: [RectXL, RectXL2]
+        photos: [RectM, RectM2]
+
     },
     {
         id: 'pr4',
         yardage: '35m2',
         name: 'Dom L-ka',
-        description: 'Domek modułowy o powierzchni zabudowy 34,69m2. Mimo niewielkich rozmiarów mieści w sobie dwie sypialnie, salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w zaciszu swojego ogrodu. Nieduże wymiary oraz kształt litery „L” pozwalają na postawienie domku na praktycznie każdej działce. Moduł dostępny w wersji lewej oraz prawej (w odbiciu lustrzanym). ',
+        description: 'Domek modułowy o powierzchni zabudowy 34,69m2. Mimo niewielkich rozmiarów mieści w sobie jedną sypialnie i duży salon z aneksem kuchennym oraz łazienkę. Jest to idealne rozwiązanie dla zapracowanych, zmęczonych miejskim zgiełkiem osób chcących wypocząć w zaciszu swojego ogrodu. Nieduże wymiary oraz kształt litery „L” pozwalają na postawienie domku na praktycznie każdej działce. Moduł dostępny w wersji lewej oraz prawej (w odbiciu lustrzanym). ',
         minPrice: 85000,
         photos: [L1, L2]
     },
@@ -59,8 +60,8 @@ export const PRODUCTS_DATA = [
         id: 'pr5',
         yardage: '41m2',
         name: 'Dom "Z" Mniejsza wersja',
-        description: 'Moduł w kształcie litery „Z” to połączenie czterech modułów umożliwiające uzyskanie dowolnego metrażu oraz zagospodarowania budynku jako jednorodzinny lub wielorodzinny obiekt. Poprzez przesunięcia modułów mamy możliwość dopasowania go do działki oraz potrzeb nawet najbardziej wymagających osób.',
-        minPrice: 140000,
+        description: 'Moduł w kształcie litery „Z” to połączenie dwóch modułów umożliwiające uzyskanie dowolnego metrażu oraz zagospodarowania budynku jako jednorodzinny lub wielorodzinny obiekt. Poprzez przesunięcia modułów mamy możliwość dopasowania go do działki oraz potrzeb nawet najbardziej wymagających osób.',
+        minPrice: 100000,
         photos: [ZSmall, ZSmall2]
     },
     {
@@ -75,7 +76,7 @@ export const PRODUCTS_DATA = [
         id: 'pr7',
         yardage: '70m2',
         name: 'Dom "Z"',
-        description: 'Moduł w kształcie litery „Z” to połączenie czterech modułów umożliwiające uzyskanie dowolnego metrażu oraz zagospodarowania budynku jako jednorodzinny lub wielorodzinny obiekt. Poprzez przesunięcia modułów mamy możliwość dopasowania go do działki oraz potrzeb nawet najbardziej wymagających osób.',
+        description: 'Moduł w kształcie litery „Z” to połączenie dwóch modułów umożliwiające uzyskanie dowolnego metrażu oraz zagospodarowania budynku jako jednorodzinny lub wielorodzinny obiekt. Poprzez przesunięcia modułów mamy możliwość dopasowania go do działki oraz potrzeb nawet najbardziej wymagających osób.',
         minPrice: 140000,
         photos: [Z1, Z2]
     },
@@ -84,7 +85,7 @@ export const PRODUCTS_DATA = [
         yardage: '+70m2',
         name: 'Dom według własnego projektu:',
         description: 'Jesteśmy w stanie zbudowac dla Ciebie niestandadowy dom. Wybierasz wyposażenie, rozkład i rodzaj, a my zajmujemy się resztą ',
-        minPrice: 100000,
+        minPrice: 150000,
         photos: [Cust1],
 
     },

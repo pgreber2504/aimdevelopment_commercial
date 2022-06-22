@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import classes from './ProductPhotos.module.scss';
 import GalleryItem from '../../../Gallery/GalleryItem/GalleryItem';
